@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import CTABanner from "./CTABanner";
 
@@ -6,6 +7,7 @@ interface CityPageProps {
   intro: string;
   neighborhoods: string[];
   faqs: { q: string; a: string }[];
+  image?: { src: string; alt: string };
 }
 
 const services = [
@@ -15,7 +17,7 @@ const services = [
   { name: "Remodeling & Drywall", href: "/remodeling", description: "Drywall repair, trim, flooring, carpentry, and renovations." },
 ];
 
-export default function CityPageTemplate({ city, intro, neighborhoods, faqs }: CityPageProps) {
+export default function CityPageTemplate({ city, intro, neighborhoods, faqs, image }: CityPageProps) {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -79,7 +81,19 @@ export default function CityPageTemplate({ city, intro, neighborhoods, faqs }: C
                 </Link>
               </div>
             </div>
-            <div className="aspect-[4/3] rounded-xl bg-brand-gray" />
+            {image ? (
+              <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
+            ) : (
+              <div className="aspect-[4/3] rounded-xl bg-brand-gray" />
+            )}
           </div>
         </div>
       </section>

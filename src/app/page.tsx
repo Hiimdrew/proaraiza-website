@@ -74,6 +74,7 @@ const serviceAreas = [
   { name: "Roswell", href: "/painting-roswell-ga" },
   { name: "Woodstock", href: "/painting-woodstock-ga" },
   { name: "Duluth", href: "/painting-duluth-ga" },
+  { name: "Dacula", href: "/painting-dacula-ga" },
 ];
 
 const marqueeItems = [
