@@ -73,6 +73,7 @@ const serviceAreas = [
   { name: "Buford", href: "/painting-buford-ga" },
   { name: "Roswell", href: "/painting-roswell-ga" },
   { name: "Woodstock", href: "/painting-woodstock-ga" },
+  { name: "Duluth", href: "/painting-duluth-ga" },
 ];
 
 const marqueeItems = [
