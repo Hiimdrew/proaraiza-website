@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileStickyBar from "@/components/MobileStickyBar";
 import ScrollProgressWrapper from "@/components/ScrollProgressWrapper";
+import Providers from "@/components/Providers";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -77,11 +78,13 @@ export default function RootLayout({
         />
       </head>
       <body className="flex min-h-full flex-col font-sans antialiased">
-        <ScrollProgressWrapper />
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        <MobileStickyBar />
+        <Providers>
+          <ScrollProgressWrapper />
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+          <MobileStickyBar />
+        </Providers>
       </body>
     </html>
   );

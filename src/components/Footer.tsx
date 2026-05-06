@@ -1,13 +1,7 @@
-import Link from "next/link";
+"use client";
 
-const quickLinks = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Services", href: "/services" },
-  { name: "Gallery", href: "/gallery" },
-  { name: "Blog", href: "/blog" },
-  { name: "Contact", href: "/contact" },
-];
+import Link from "next/link";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const serviceAreas = [
   { name: "Cumming", href: "/painting-cumming-ga" },
@@ -21,6 +15,17 @@ const serviceAreas = [
 ];
 
 export default function Footer() {
+  const { t } = useLanguage();
+
+  const quickLinks = [
+    { name: t.nav.home, href: "/" },
+    { name: t.nav.about, href: "/about" },
+    { name: t.nav.services, href: "/services" },
+    { name: t.nav.gallery, href: "/gallery" },
+    { name: t.nav.blog, href: "/blog" },
+    { name: t.nav.contact, href: "/contact" },
+  ];
+
   return (
     <footer className="bg-brand-black text-gray-400">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
@@ -30,17 +35,15 @@ export default function Footer() {
               <span className="text-white">PRO</span>{" "}
               <span className="text-brand-gold">ARAIZA</span>
             </div>
-            <p className="mt-1 text-xs text-gray-500">Remodeling & Painting</p>
+            <p className="mt-1 text-xs text-gray-500">{t.footer.tagline}</p>
             <p className="mt-4 text-sm leading-relaxed">
-              Professional painting and remodeling services for homeowners in
-              Cumming, GA and the North Atlanta suburbs. Fully insured, free
-              estimates.
+              {t.footer.description}
             </p>
           </div>
 
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
-              Quick Links
+              {t.footer.quickLinks}
             </h3>
             <ul className="mt-4 space-y-2">
               {quickLinks.map((link) => (
@@ -58,7 +61,7 @@ export default function Footer() {
 
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
-              Service Areas
+              {t.footer.serviceAreas}
             </h3>
             <ul className="mt-4 space-y-2">
               {serviceAreas.map((area) => (
@@ -76,7 +79,7 @@ export default function Footer() {
 
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
-              Contact Us
+              {t.footer.contactUs}
             </h3>
             <ul className="mt-4 space-y-3 text-sm">
               <li>
@@ -97,12 +100,10 @@ export default function Footer() {
 
         <div className="mt-12 border-t border-gray-800 pt-8 text-center text-xs text-gray-500">
           <p>
-            &copy; {new Date().getFullYear()} Pro Araiza Remodeling & Painting.
-            All rights reserved.
+            &copy; {new Date().getFullYear()} Pro Araiza Remodeling & Painting.{" "}
+            {t.footer.rights}
           </p>
-          <p className="mt-1">
-            Proudly serving Forsyth County and the North Atlanta suburbs.
-          </p>
+          <p className="mt-1">{t.footer.serving}</p>
         </div>
       </div>
     </footer>

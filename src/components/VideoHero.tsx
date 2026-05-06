@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { GradientText } from "@/components/animations/TextReveal";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 interface VideoHeroProps {
   videoSrc?: string;
@@ -10,6 +11,8 @@ interface VideoHeroProps {
 }
 
 export default function VideoHero({ videoSrc, posterSrc }: VideoHeroProps) {
+  const { t } = useLanguage();
+
   return (
     <section className="relative h-[100vh] min-h-[700px] overflow-hidden">
       {/* Video/Image Background */}
@@ -28,10 +31,8 @@ export default function VideoHero({ videoSrc, posterSrc }: VideoHeroProps) {
         ) : (
           <div className="h-full w-full bg-gradient-to-br from-gray-900 via-gray-800 to-brand-black" />
         )}
-        {/* Overlay gradients */}
         <div className="absolute inset-0 bg-gradient-to-r from-brand-black/85 via-brand-black/50 to-brand-black/20" />
         <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent to-brand-black/40" />
-        {/* Subtle noise texture */}
         <div className="bg-noise absolute inset-0 opacity-30" />
       </div>
 
@@ -45,7 +46,7 @@ export default function VideoHero({ videoSrc, posterSrc }: VideoHeroProps) {
               transition={{ duration: 0.6, delay: 0.3 }}
             >
               <span className="inline-block rounded-full border border-brand-gold/30 bg-brand-gold/10 px-5 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-brand-gold backdrop-blur-sm">
-                Forsyth County&apos;s Trusted Painter
+                {t.hero.badge}
               </span>
             </motion.div>
 
@@ -56,7 +57,7 @@ export default function VideoHero({ videoSrc, posterSrc }: VideoHeroProps) {
                 transition={{ duration: 0.8, delay: 0.5 }}
               >
                 <h1 className="text-5xl font-bold tracking-tight text-white sm:text-6xl lg:text-8xl">
-                  Professional
+                  {t.hero.line1}
                 </h1>
               </motion.div>
               <motion.div
@@ -65,8 +66,8 @@ export default function VideoHero({ videoSrc, posterSrc }: VideoHeroProps) {
                 transition={{ duration: 0.8, delay: 0.65 }}
               >
                 <h1 className="text-5xl font-bold tracking-tight text-white sm:text-6xl lg:text-8xl">
-                  Painting &amp;{" "}
-                  <GradientText>Remodeling</GradientText>
+                  {t.hero.line2}{" "}
+                  <GradientText>{t.hero.line2Accent}</GradientText>
                 </h1>
               </motion.div>
             </div>
@@ -86,8 +87,7 @@ export default function VideoHero({ videoSrc, posterSrc }: VideoHeroProps) {
               transition={{ duration: 0.8, delay: 0.9 }}
               className="mt-8 max-w-xl text-lg leading-relaxed text-gray-300 sm:text-xl"
             >
-              Trusted by Forsyth County homeowners for over 15 years. Interior
-              and exterior painting, cabinet refinishing, and full remodeling.
+              {t.hero.subtitle}
             </motion.p>
 
             <motion.div
@@ -100,10 +100,10 @@ export default function VideoHero({ videoSrc, posterSrc }: VideoHeroProps) {
                 href="/contact"
                 className="group relative overflow-hidden rounded-lg bg-brand-gold px-10 py-4 text-center text-sm font-bold uppercase tracking-wider text-brand-black transition-all duration-300 hover:shadow-2xl hover:shadow-brand-gold/30 animate-pulse-glow"
               >
-                <span className="relative z-10">Get a Free Quote</span>
+                <span className="relative z-10">{t.hero.cta}</span>
                 <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-brand-copper to-brand-gold transition-transform duration-500 group-hover:translate-x-0" />
                 <span className="absolute inset-0 z-10 flex items-center justify-center font-bold uppercase tracking-wider text-brand-black opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                  Get a Free Quote
+                  {t.hero.cta}
                 </span>
               </Link>
               <a
@@ -135,7 +135,7 @@ export default function VideoHero({ videoSrc, posterSrc }: VideoHeroProps) {
           className="flex flex-col items-center gap-3"
         >
           <span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-white/40">
-            Scroll
+            {t.hero.scroll}
           </span>
           <div className="h-10 w-[1px] bg-gradient-to-b from-white/40 to-transparent" />
         </motion.div>
