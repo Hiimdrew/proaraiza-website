@@ -4,7 +4,7 @@ import CityPageTemplate from "@/components/CityPageTemplate";
 export const metadata: Metadata = {
   title: "Painter in Duluth, GA",
   description:
-    "Professional painting and remodeling in Duluth, GA. Interior, exterior, cabinet painting, and full remodeling. Serving Gwinnett County. Fully insured, free estimates. Call (770) 624-0593.",
+    "Professional painting and remodeling in Duluth, GA. Interior, exterior, cabinet painting, and full remodeling. Serving Gwinnett County. Fully insured, free estimates. Call (843) 415-2437.",
 };
 
 export default function PaintingDuluthPage() {

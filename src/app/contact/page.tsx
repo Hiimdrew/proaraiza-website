@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Get a Free Quote",
   description:
-    "Request a free painting or remodeling estimate from Pro Araiza. Serving Cumming, GA and the North Atlanta suburbs. Call (770) 624-0593.",
+    "Request a free painting or remodeling estimate from Pro Araiza. Serving Cumming, GA and the North Atlanta suburbs. Call (843) 415-2437.",
 };
 
 export default function ContactPage() {
@@ -131,10 +131,10 @@ export default function ContactPage() {
                   <div>
                     <p className="text-sm font-medium text-brand-text-light">Phone</p>
                     <a
-                      href="tel:7706240593"
+                      href="tel:8434152437"
                       className="text-lg font-semibold text-brand-black transition hover:text-brand-gold"
                     >
-                      (770) 624-0593
+                      (843) 415-2437
                     </a>
                   </div>
                   <div>

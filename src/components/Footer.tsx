@@ -79,8 +79,8 @@ export default function Footer() {
             </h3>
             <ul className="mt-4 space-y-3 text-sm">
               <li>
-                <a href="tel:7706240593" className="transition hover:text-brand-gold">
-                  (770) 624-0593
+                <a href="tel:8434152437" className="transition hover:text-brand-gold">
+                  (843) 415-2437
                 </a>
               </li>
               <li>

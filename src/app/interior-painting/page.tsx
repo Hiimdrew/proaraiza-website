@@ -5,7 +5,7 @@ import CTABanner from "@/components/CTABanner";
 export const metadata: Metadata = {
   title: "Interior Painting Cumming, GA",
   description:
-    "Transform your home with professional interior painting in Cumming, GA. Walls, ceilings, trim, and more. Free estimates. Call (770) 624-0593.",
+    "Transform your home with professional interior painting in Cumming, GA. Walls, ceilings, trim, and more. Free estimates. Call (843) 415-2437.",
 };
 
 const rooms = [
@@ -109,10 +109,10 @@ export default function InteriorPaintingPage() {
                 Get a Free Estimate
               </Link>
               <a
-                href="tel:7706240593"
+                href="tel:8434152437"
                 className="rounded-md border border-gray-600 px-8 py-3.5 text-center text-sm font-semibold text-white transition hover:border-brand-gold hover:text-brand-gold"
               >
-                Call (770) 624-0593
+                Call (843) 415-2437
               </a>
             </div>
           </div>

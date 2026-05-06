@@ -72,10 +72,10 @@ export default function Header() {
 
           <div className="hidden lg:flex lg:items-center lg:gap-4">
             <a
-              href="tel:7706240593"
+              href="tel:8434152437"
               className="text-sm font-medium text-gray-300 transition hover:text-white"
             >
-              (770) 624-0593
+              (843) 415-2437
             </a>
             <Link
               href="/contact"
@@ -144,10 +144,10 @@ export default function Header() {
             )}
             <div className="pt-4 border-t border-gray-800">
               <a
-                href="tel:7706240593"
+                href="tel:8434152437"
                 className="block py-2 text-sm font-medium text-brand-gold"
               >
-                Call (770) 624-0593
+                Call (843) 415-2437
               </a>
               <Link
                 href="/contact"

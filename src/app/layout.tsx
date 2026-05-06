@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     template: "%s | Pro Araiza Remodeling & Painting",
   },
   description:
-    "Professional painting and remodeling in Cumming, GA. Interior, exterior, cabinet painting, and full remodeling. Fully insured, free estimates. Call (770) 624-0593.",
+    "Professional painting and remodeling in Cumming, GA. Interior, exterior, cabinet painting, and full remodeling. Fully insured, free estimates. Call (843) 415-2437.",
   metadataBase: new URL("https://proaraiza.com"),
   openGraph: {
     type: "website",
@@ -30,7 +30,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: "Pro Araiza Remodeling & Painting",
-  telephone: "(770) 624-0593",
+  telephone: "(843) 415-2437",
   email: "Diangel23@hotmail.com",
   address: {
     "@type": "PostalAddress",

@@ -5,7 +5,7 @@ import CTABanner from "@/components/CTABanner";
 export const metadata: Metadata = {
   title: "Exterior Painting Cumming, GA",
   description:
-    "Expert exterior painting for Cumming, GA homes. Hardie board, wood, brick — all siding types. Fully insured, free estimates. Call (770) 624-0593.",
+    "Expert exterior painting for Cumming, GA homes. Hardie board, wood, brick — all siding types. Fully insured, free estimates. Call (843) 415-2437.",
 };
 
 const sidingTypes = [
@@ -109,10 +109,10 @@ export default function ExteriorPaintingPage() {
                 Get a Free Estimate
               </Link>
               <a
-                href="tel:7706240593"
+                href="tel:8434152437"
                 className="rounded-md border border-gray-600 px-8 py-3.5 text-center text-sm font-semibold text-white transition hover:border-brand-gold hover:text-brand-gold"
               >
-                Call (770) 624-0593
+                Call (843) 415-2437
               </a>
             </div>
           </div>
