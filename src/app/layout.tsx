@@ -19,11 +19,33 @@ export const metadata: Metadata = {
   },
   description:
     "Professional painting and remodeling in Cumming, GA. Interior, exterior, cabinet painting, and full remodeling. Fully insured, free estimates. Call (843) 415-2437.",
-  metadataBase: new URL("https://proaraiza.com"),
+  metadataBase: new URL("https://proaraiza-website.vercel.app"),
   openGraph: {
     type: "website",
     locale: "en_US",
     siteName: "Pro Araiza Remodeling & Painting",
+    title: "Pro Araiza Remodeling & Painting | Cumming, GA Painter",
+    description:
+      "Professional painting and remodeling for North Atlanta homeowners. 15+ years, fully insured, free estimates. Call (843) 415-2437.",
+    url: "https://proaraiza-website.vercel.app",
+    images: [
+      {
+        url: "/og-preview.png",
+        width: 1200,
+        height: 630,
+        alt: "Pro Araiza Remodeling & Painting — Forsyth County's Trusted Painter",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pro Araiza Remodeling & Painting | Cumming, GA Painter",
+    description:
+      "Professional painting and remodeling for North Atlanta homeowners. 15+ years, fully insured, free estimates.",
+    images: ["/og-preview.png"],
+  },
+  icons: {
+    icon: "/og-preview.png",
   },
 };
 
