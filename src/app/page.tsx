@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import LazyVideo from "@/components/LazyVideo";
 import { motion } from "framer-motion";
 import VideoHero from "@/components/VideoHero";
 import CTABanner from "@/components/CTABanner";
@@ -249,9 +250,11 @@ export default function HomePage() {
                 <div className="group cursor-pointer overflow-hidden rounded-2xl ring-1 ring-white/10 transition-all duration-500 hover:ring-brand-gold/30 hover:shadow-2xl hover:shadow-brand-gold/10">
                   <div className="relative aspect-[4/3] overflow-hidden bg-brand-dark-gray">
                     {project.video ? (
-                      <video autoPlay muted loop playsInline poster={project.poster} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        <source src={project.video} type="video/mp4" />
-                      </video>
+                      <LazyVideo
+                        src={project.video}
+                        poster={project.poster}
+                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
                     ) : project.image ? (
                       <Image
                         src={project.image}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import CTABanner from "@/components/CTABanner";
+import LazyVideo from "@/components/LazyVideo";
 
 export const metadata: Metadata = {
   title: "Deck Staining & Wood Restoration | Cumming & North Atlanta",
@@ -80,16 +81,11 @@ export default function DeckStainingPage() {
       {/* Hero */}
       <section className="relative bg-brand-black">
         <div className="absolute inset-0">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
+          <LazyVideo
+            src="/videos/projects/deck-timber-frame.mp4"
             poster="/images/projects/deck-timber-frame.jpg"
             className="h-full w-full object-cover opacity-50"
-          >
-            <source src="/videos/projects/deck-timber-frame.mp4" type="video/mp4" />
-          </video>
+          />
           <div className="absolute inset-0 bg-gradient-to-r from-brand-black/90 via-brand-black/60 to-brand-black/30" />
         </div>
         <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">

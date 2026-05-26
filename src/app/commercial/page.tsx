@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import CTABanner from "@/components/CTABanner";
+import LazyVideo from "@/components/LazyVideo";
 
 export const metadata: Metadata = {
   title: "Commercial Painting | North Atlanta Offices, Retail & Small Business",
@@ -95,16 +96,11 @@ export default function CommercialPage() {
       {/* Hero */}
       <section className="relative bg-brand-black">
         <div className="absolute inset-0">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
+          <LazyVideo
+            src="/videos/projects/commercial-hallway.mp4"
             poster="/images/projects/commercial-hallway.jpg"
             className="h-full w-full object-cover opacity-50"
-          >
-            <source src="/videos/projects/commercial-hallway.mp4" type="video/mp4" />
-          </video>
+          />
           <div className="absolute inset-0 bg-gradient-to-r from-brand-black/90 via-brand-black/60 to-brand-black/30" />
         </div>
         <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
