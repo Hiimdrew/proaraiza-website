@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import CTABanner from "@/components/CTABanner";
 
@@ -145,7 +146,15 @@ export default function CabinetPaintingPage() {
                 </div>
               </div>
             </div>
-            <div className="aspect-[4/3] rounded-xl bg-brand-gray" />
+            <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
+              <Image
+                src="/images/projects/luxury-kitchen-chandelier.jpg"
+                alt="Luxury white kitchen cabinets with island, recessed LED lighting, and custom multi-jar pendant chandelier"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -211,7 +220,15 @@ export default function CabinetPaintingPage() {
       <section className="bg-brand-gray py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2">
-            <div className="aspect-[4/3] rounded-xl bg-white shadow-sm" />
+            <div className="relative aspect-[4/3] overflow-hidden rounded-xl shadow-sm">
+              <Image
+                src="/images/projects/cabinets-warm-white.jpg"
+                alt="Warm white kitchen cabinets with satin sheen finish by Pro Araiza"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
             <div>
               <h2 className="text-3xl font-bold tracking-tight text-brand-black sm:text-4xl">
                 Two-Tone Kitchen Cabinets

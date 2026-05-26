@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import CTABanner from "@/components/CTABanner";
 
@@ -144,7 +145,15 @@ export default function ExteriorPaintingPage() {
                 ))}
               </ul>
             </div>
-            <div className="aspect-[4/3] rounded-xl bg-brand-gray" />
+            <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
+              <Image
+                src="/images/projects/exterior-black-garage.jpg"
+                alt="Brick home with premium satin black garage doors and decorative arched trim by Pro Araiza"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
           </div>
         </div>
       </section>

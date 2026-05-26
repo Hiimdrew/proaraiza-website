@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import CTABanner from "@/components/CTABanner";
 
@@ -152,7 +153,15 @@ export default function InteriorPaintingPage() {
                 ))}
               </ul>
             </div>
-            <div className="aspect-[4/3] rounded-xl bg-brand-gray" />
+            <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
+              <Image
+                src="/images/projects/hallway-wainscoting.jpg"
+                alt="Premium interior hallway with custom wainscoting and crown molding painted by Pro Araiza"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
           </div>
         </div>
       </section>

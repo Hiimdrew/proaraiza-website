@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import VideoHero from "@/components/VideoHero";
@@ -240,24 +241,26 @@ export default function HomePage() {
 
           <StaggerChildren className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3" staggerDelay={0.2}>
             {[
-              { title: "Modern Living Room", location: "Cumming, GA", type: "Interior Painting", video: undefined },
-              { title: "Kitchen Cabinet Transformation", location: "Alpharetta, GA", type: "Cabinet Refinishing", video: "https://d8j0ntlcm91z4.cloudfront.net/user_3DJzWESkS8iVQCDTaqBdUF9qEAc/hf_20260506_013722_e050bc30-afab-4373-ab4a-3c4e27313913.mp4" },
-              { title: "Craftsman Exterior", location: "Roswell, GA", type: "Exterior Painting", video: "https://d8j0ntlcm91z4.cloudfront.net/user_3DJzWESkS8iVQCDTaqBdUF9qEAc/hf_20260506_013725_58789826-82a0-4531-9a20-ecc327da0c2d.mp4" },
+              { title: "Modern Kitchen & Dining", location: "Cumming, GA", type: "Interior Painting", video: "/videos/projects/modern-kitchen.mp4", poster: "/images/projects/kitchen-gray-walls.jpg" },
+              { title: "Luxury Cabinet Refinishing", location: "Alpharetta, GA", type: "Cabinet Refinishing", image: "/images/projects/luxury-kitchen-chandelier.jpg" },
+              { title: "Premium Exterior Repaint", location: "Marietta, GA", type: "Exterior Painting", video: "/videos/projects/exterior-black-garage.mp4", poster: "/images/projects/exterior-black-garage.jpg" },
             ].map((project) => (
               <StaggerItem key={project.title}>
                 <div className="group cursor-pointer overflow-hidden rounded-2xl ring-1 ring-white/10 transition-all duration-500 hover:ring-brand-gold/30 hover:shadow-2xl hover:shadow-brand-gold/10">
-                  <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-gray-700 to-gray-800">
+                  <div className="relative aspect-[4/3] overflow-hidden bg-brand-dark-gray">
                     {project.video ? (
-                      <video autoPlay muted loop playsInline className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110">
+                      <video autoPlay muted loop playsInline poster={project.poster} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <source src={project.video} type="video/mp4" />
                       </video>
-                    ) : (
-                      <div className="flex h-full items-center justify-center text-gray-600">
-                        <svg className="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={0.5}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.41a2.25 2.25 0 013.182 0l2.909 2.91m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
-                        </svg>
-                      </div>
-                    )}
+                    ) : project.image ? (
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      />
+                    ) : null}
                     <div className="absolute inset-0 bg-gradient-to-t from-brand-black/80 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                   </div>
                   <div className="bg-brand-dark-gray p-6">
@@ -540,16 +543,24 @@ export default function HomePage() {
 
           <StaggerChildren className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3" staggerDelay={0.15}>
             {[
-              { title: "How Much Does It Cost to Paint a House in Georgia?", excerpt: "A room-by-room breakdown of what Georgia homeowners actually pay for professional painting in 2026.", href: "/blog/cost-to-paint-house-georgia" },
-              { title: "7 Questions to Ask Before Hiring a Painting Contractor", excerpt: "Protect yourself and your home with these essential questions every homeowner should ask.", href: "/blog/questions-to-ask-painting-contractor" },
-              { title: "Best Time to Paint Your Home Exterior in Georgia", excerpt: "Spring, summer, or fall? Here is when Georgia weather gives you the best results.", href: "/blog/best-time-to-paint-exterior-georgia" },
+              { title: "How Much Does It Cost to Paint a House in Georgia?", excerpt: "A room-by-room breakdown of what Georgia homeowners actually pay for professional painting in 2026.", href: "/blog/cost-to-paint-house-georgia", image: "/images/projects/luxury-kitchen-chandelier.jpg" },
+              { title: "7 Questions to Ask Before Hiring a Painting Contractor", excerpt: "Protect yourself and your home with these essential questions every homeowner should ask.", href: "/blog/questions-to-ask-painting-contractor", image: "/images/projects/joaquin-on-stilts.jpg" },
+              { title: "Best Time to Paint Your Home Exterior in Georgia", excerpt: "Spring, summer, or fall? Here is when Georgia weather gives you the best results.", href: "/blog/best-time-to-paint-exterior-georgia", image: "/images/projects/stucco-exterior.jpg" },
             ].map((post) => (
               <StaggerItem key={post.href}>
                 <Link
                   href={post.href}
                   className="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-gray-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
                 >
-                  <div className="aspect-[16/9] bg-gradient-to-br from-gray-200 to-gray-100 transition-transform duration-500 group-hover:scale-105" />
+                  <div className="relative aspect-[16/9] overflow-hidden">
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                  </div>
                   <div className="flex flex-1 flex-col p-7">
                     <h3 className="text-lg font-bold leading-tight text-brand-black transition-colors group-hover:text-brand-gold">
                       {post.title}

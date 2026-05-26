@@ -81,13 +81,13 @@ export default function AboutPage() {
               </a>
             </div>
           </div>
-          <div className="relative aspect-[4/5] overflow-hidden rounded-2xl lg:aspect-auto">
+          <div className="relative aspect-[3/4] overflow-hidden rounded-2xl">
             <Image
               src="/images/projects/joaquin-on-stilts.jpg"
               alt="Joaquin Araiza, owner of Pro Araiza Remodeling & Painting, on stilts in a customer's kitchen"
               fill
               priority
-              className="object-cover"
+              className="object-cover object-top"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>
