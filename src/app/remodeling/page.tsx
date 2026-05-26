@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import CTABanner from "@/components/CTABanner";
 
@@ -11,6 +12,8 @@ export const metadata: Metadata = {
 const serviceCategories = [
   {
     title: "Drywall Repair & Installation",
+    image: "/images/projects/bare-wood-sanded.jpg",
+    alt: "Flawlessly sanded bare wood surface — the kind of prep that makes a finish last",
     items: [
       "Hole and crack repair",
       "Water damage restoration",
@@ -21,6 +24,8 @@ const serviceCategories = [
   },
   {
     title: "Trim, Molding & Wainscoting",
+    image: "/images/projects/hallway-wainscoting.jpg",
+    alt: "Premium hallway with custom wainscoting, crown molding, and crisp white trim",
     items: [
       "Crown molding installation",
       "Baseboard replacement",
@@ -31,6 +36,8 @@ const serviceCategories = [
   },
   {
     title: "Hardwood Floor Refinishing",
+    image: "/images/projects/kitchen-gray-walls.jpg",
+    alt: "Modern kitchen with refinished dark hardwood floors meeting clean white trim",
     items: [
       "Sanding and staining",
       "Polyurethane coating",
@@ -41,6 +48,8 @@ const serviceCategories = [
   },
   {
     title: "Carpentry & Custom Work",
+    image: "/images/projects/deck-timber-frame.jpg",
+    alt: "Custom timber-frame covered deck with exposed trusses and natural stained wood",
     items: [
       "Custom built-in shelving",
       "Closet systems",
@@ -51,6 +60,8 @@ const serviceCategories = [
   },
   {
     title: "Bathroom & Kitchen Remodeling",
+    image: "/images/projects/luxury-kitchen-chandelier.jpg",
+    alt: "Luxury kitchen remodel with white cabinets, recessed LED lighting, and custom chandelier",
     items: [
       "Full bathroom renovations",
       "Kitchen updates and layouts",
@@ -154,7 +165,15 @@ export default function RemodelingPage() {
                     ))}
                   </ul>
                 </div>
-                <div className={`aspect-[4/3] rounded-xl bg-brand-gray ${idx % 2 === 1 ? "lg:order-1" : ""}`} />
+                <div className={`relative aspect-[4/3] overflow-hidden rounded-xl ${idx % 2 === 1 ? "lg:order-1" : ""}`}>
+                  <Image
+                    src={category.image}
+                    alt={category.alt}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                </div>
               </div>
             ))}
           </div>
