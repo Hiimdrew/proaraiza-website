@@ -3,9 +3,9 @@ import Link from "next/link";
 import CTABanner from "@/components/CTABanner";
 
 export const metadata: Metadata = {
-  title: "Remodeling & Drywall Services Cumming, GA",
+  title: "Remodeling & Drywall | North Atlanta — Drywall, Trim, Light Renovations",
   description:
-    "Drywall repair, trim installation, hardwood refinishing, carpentry, and full remodeling in Cumming, GA. One team for every project. Free estimates.",
+    "Drywall repair, trim installation, hardwood refinishing, carpentry, and light remodeling across North Atlanta. The repairs and upgrades that make a paint job look perfect — done by the same craftsman team.",
 };
 
 const serviceCategories = [
@@ -106,7 +106,7 @@ export default function RemodelingPage() {
         <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
           <div className="max-w-2xl">
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-              Remodeling &amp; Drywall Services in Cumming, GA
+              Remodeling &amp; Drywall for North Atlanta Homes
             </h1>
             <p className="mt-6 text-lg text-gray-300">
               Drywall repair, trim work, flooring, carpentry, and full room

@@ -140,18 +140,18 @@ export default function ContactPage() {
                   <div>
                     <p className="text-sm font-medium text-brand-text-light">Email</p>
                     <a
-                      href="mailto:Diangel23@hotmail.com"
+                      href="mailto:Proaraiza93@outlook.com"
                       className="text-brand-black transition hover:text-brand-gold"
                     >
-                      Diangel23@hotmail.com
+                      Proaraiza93@outlook.com
                     </a>
                   </div>
                   <div>
                     <p className="text-sm font-medium text-brand-text-light">Address</p>
                     <p className="text-brand-black">
-                      3419 Preston Pointe Way
+                      302A Bald Ridge Rd
                       <br />
-                      Cumming, GA 30041
+                      Cumming, GA 30040
                     </p>
                   </div>
                   <div>

@@ -3,9 +3,9 @@ import Link from "next/link";
 import CTABanner from "@/components/CTABanner";
 
 export const metadata: Metadata = {
-  title: "Cabinet Painting Cumming, GA | Kitchen Cabinet Refinishing",
+  title: "Cabinet Painting & Refinishing | North Atlanta Kitchen Transformations",
   description:
-    "Professional kitchen cabinet painting and refinishing in Cumming, GA. Two-tone, color transformations, hardware upgrades. Save 80% vs replacement. Free estimates.",
+    "Factory-quality sprayed cabinet refinishing for North Atlanta kitchens — Cumming, Alpharetta, Marietta, Roswell. Two-tone, color updates, hardware upgrades. Save 80% vs replacement. 2-year warranty.",
 };
 
 const process = [
@@ -80,12 +80,13 @@ export default function CabinetPaintingPage() {
         <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
           <div className="max-w-2xl">
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-              Cabinet Painting &amp; Refinishing in Cumming, GA
+              Cabinet Painting &amp; Refinishing for North Atlanta Kitchens
             </h1>
             <p className="mt-6 text-lg text-gray-300">
-              Give your kitchen a fresh, modern look at a fraction of the cost of
-              new cabinets. Two-tone, single color, hardware upgrades — we do it
-              all.
+              Factory-quality sprayed finishes. We strip your kitchen down to
+              bare wood, mask off your countertops, and deliver a finish that
+              looks like it came from the cabinet factory — at a fraction of
+              replacement cost.
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link

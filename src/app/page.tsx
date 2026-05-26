@@ -60,20 +60,21 @@ const services = [
 ];
 
 const trustStats = [
-  { number: 15, suffix: "+", label: "Years Experience" },
-  { number: 6, suffix: "+", label: "Cities Served" },
-  { number: 500, suffix: "+", label: "Projects Completed" },
+  { number: 10, suffix: "+", label: "Years in Business" },
+  { number: 250, suffix: "+", label: "Projects Completed" },
+  { number: 2, suffix: "-Yr", label: "Workmanship Warranty" },
   { number: 7, suffix: "/7", label: "Days Available" },
 ];
 
 const serviceAreas = [
   { name: "Cumming", href: "/painting-cumming-ga" },
   { name: "Alpharetta", href: "/painting-alpharetta-ga" },
-  { name: "Gainesville", href: "/painting-gainesville-ga" },
-  { name: "Buford", href: "/painting-buford-ga" },
+  { name: "Marietta", href: "/painting-marietta-ga" },
   { name: "Roswell", href: "/painting-roswell-ga" },
+  { name: "Buford", href: "/painting-buford-ga" },
   { name: "Woodstock", href: "/painting-woodstock-ga" },
   { name: "Duluth", href: "/painting-duluth-ga" },
+  { name: "Gainesville", href: "/painting-gainesville-ga" },
   { name: "Dacula", href: "/painting-dacula-ga" },
 ];
 
@@ -306,16 +307,16 @@ export default function HomePage() {
                 className="mt-4 text-4xl font-bold tracking-tight text-brand-black sm:text-5xl"
                 delay={0.1}
               >
-                Why Forsyth County Homeowners Choose Us
+                Why North Atlanta Homeowners Choose Pro Araiza
               </TextReveal>
 
               <div className="mt-12 space-y-6">
                 {[
-                  { text: "Family-owned and locally operated in Cumming, GA", icon: "home" },
-                  { text: "Over 15 years of painting and remodeling experience", icon: "clock" },
-                  { text: "Fully insured for your protection", icon: "shield" },
-                  { text: "Interior, exterior, remodeling. One team for everything", icon: "check" },
-                  { text: "Free estimates with honest, upfront pricing", icon: "dollar" },
+                  { text: "Owner-led — Joaquin Araiza is on every job, no subcontractors", icon: "home" },
+                  { text: "10 years in business · 250+ projects across North Atlanta", icon: "clock" },
+                  { text: "Sherwin-Williams & Benjamin Moore premium paint only", icon: "check" },
+                  { text: "Fully insured · 2-year workmanship warranty on every project", icon: "shield" },
+                  { text: "Honest pricing — 30-50% deposit, balance only when you're 100% satisfied", icon: "dollar" },
                   { text: "Available 7 days a week, 7 AM to 7 PM", icon: "calendar" },
                 ].map((point, i) => (
                   <motion.div

@@ -3,9 +3,9 @@ import Link from "next/link";
 import CTABanner from "@/components/CTABanner";
 
 export const metadata: Metadata = {
-  title: "Exterior Painting Cumming, GA",
+  title: "Exterior Painting | North Atlanta — Cumming, Alpharetta, Marietta, Roswell",
   description:
-    "Expert exterior painting for Cumming, GA homes. Hardie board, wood, brick — all siding types. Fully insured, free estimates. Call (843) 415-2437.",
+    "Owner-led exterior painting for North Atlanta homes. Hardie board, brick, stucco, wood, trim, and garage doors. Premium Sherwin-Williams & Benjamin Moore systems chosen for Georgia weather. 2-year warranty. Free estimates.",
 };
 
 const sidingTypes = [
@@ -95,11 +95,13 @@ export default function ExteriorPaintingPage() {
         <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
           <div className="max-w-2xl">
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-              Exterior Painting Services in Cumming, GA
+              Exterior Painting for North Atlanta Homes
             </h1>
             <p className="mt-6 text-lg text-gray-300">
-              Protect and beautify your home with a professional exterior paint job
-              built to last in Georgia weather.
+              Brick, Hardie plank, stucco, garage doors, and decorative trim.
+              Premium Sherwin-Williams and Benjamin Moore systems chosen for
+              North Georgia weather — and applied so the finish lasts as long as
+              the warranty says it will.
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link

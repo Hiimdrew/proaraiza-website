@@ -3,9 +3,9 @@ import Link from "next/link";
 import CTABanner from "@/components/CTABanner";
 
 export const metadata: Metadata = {
-  title: "Interior Painting Cumming, GA",
+  title: "Interior Painting | North Atlanta — Cumming, Alpharetta, Marietta, Roswell",
   description:
-    "Transform your home with professional interior painting in Cumming, GA. Walls, ceilings, trim, and more. Free estimates. Call (843) 415-2437.",
+    "Owner-led interior painting for North Atlanta homes. Whole-home repaints, accent walls, trim, ceilings. Sherwin-Williams & Benjamin Moore. 2-year warranty. Free estimates. Call (843) 415-2437.",
 };
 
 const rooms = [
@@ -95,11 +95,13 @@ export default function InteriorPaintingPage() {
         <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
           <div className="max-w-2xl">
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-              Interior Painting Services in Cumming, GA
+              Interior Painting for North Atlanta Homes
             </h1>
             <p className="mt-6 text-lg text-gray-300">
-              Transform any room with a flawless, professional paint job. Walls,
-              ceilings, trim, and more — done right the first time.
+              Whole-home repaints, accent walls, trim, ceilings, and detailed
+              millwork. We protect your floors and furnishings, work clean every
+              day, and don&apos;t leave until you walk the project and say it&apos;s
+              perfect.
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link

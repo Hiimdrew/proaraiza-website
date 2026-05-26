@@ -13,7 +13,9 @@ export default function Header() {
     { name: t.nav.interiorPainting, href: "/interior-painting" },
     { name: t.nav.exteriorPainting, href: "/exterior-painting" },
     { name: t.nav.cabinetPainting, href: "/cabinet-painting" },
+    { name: t.nav.deckStaining, href: "/deck-staining" },
     { name: t.nav.remodeling, href: "/remodeling" },
+    { name: t.nav.commercial, href: "/commercial" },
   ];
 
   const navItems = [
@@ -21,6 +23,7 @@ export default function Header() {
     { name: t.nav.about, href: "/about" },
     { name: t.nav.services, href: "/services", children: services },
     { name: t.nav.gallery, href: "/gallery" },
+    { name: t.nav.guarantees, href: "/guarantees" },
     { name: t.nav.blog, href: "/blog" },
     { name: t.nav.contact, href: "/contact" },
   ];
