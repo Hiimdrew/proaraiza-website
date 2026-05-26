@@ -22,6 +22,12 @@ body {
   font-family: var(--font-sans);
 }
 
+@media (max-width: 1023px) {
+  body {
+    padding-bottom: calc(4.5rem + env(safe-area-inset-bottom));
+  }
+}
+
 @keyframes shimmer {
   0%, 100% { background-position: 0% center; }
   50% { background-position: 200% center; }

@@ -14,7 +14,7 @@ export default function VideoHero({ videoSrc, posterSrc }: VideoHeroProps) {
   const { t } = useLanguage();
 
   return (
-    <section className="relative h-[100vh] min-h-[700px] overflow-hidden">
+    <section className="relative h-[calc(100svh-76px)] min-h-[560px] overflow-hidden sm:min-h-[620px] lg:h-[100vh] lg:min-h-[700px]">
       {/* Video/Image Background */}
       <div className="absolute inset-0">
         {videoSrc ? (
@@ -37,7 +37,7 @@ export default function VideoHero({ videoSrc, posterSrc }: VideoHeroProps) {
       </div>
 
       {/* Content */}
-      <div className="relative flex h-full items-center">
+      <div className="relative flex h-full items-center py-10 sm:py-0">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <motion.div
@@ -94,7 +94,7 @@ export default function VideoHero({ videoSrc, posterSrc }: VideoHeroProps) {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.1 }}
-              className="mt-10 flex flex-col gap-4 sm:flex-row"
+              className="mt-10 hidden flex-col gap-4 sm:flex sm:flex-row"
             >
               <Link
                 href="/contact"
@@ -127,7 +127,7 @@ export default function VideoHero({ videoSrc, posterSrc }: VideoHeroProps) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2"
+        className="absolute bottom-10 left-1/2 hidden -translate-x-1/2 sm:block"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}

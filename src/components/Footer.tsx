@@ -6,11 +6,12 @@ import { useLanguage } from "@/i18n/LanguageContext";
 const serviceAreas = [
   { name: "Cumming", href: "/painting-cumming-ga" },
   { name: "Alpharetta", href: "/painting-alpharetta-ga" },
-  { name: "Gainesville", href: "/painting-gainesville-ga" },
-  { name: "Buford", href: "/painting-buford-ga" },
+  { name: "Marietta", href: "/painting-marietta-ga" },
   { name: "Roswell", href: "/painting-roswell-ga" },
+  { name: "Buford", href: "/painting-buford-ga" },
   { name: "Woodstock", href: "/painting-woodstock-ga" },
   { name: "Duluth", href: "/painting-duluth-ga" },
+  { name: "Gainesville", href: "/painting-gainesville-ga" },
   { name: "Dacula", href: "/painting-dacula-ga" },
 ];
 
@@ -88,22 +89,25 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="mailto:Diangel23@hotmail.com" className="transition hover:text-brand-gold">
-                  Diangel23@hotmail.com
+                <a href="mailto:Proaraiza93@outlook.com" className="transition hover:text-brand-gold">
+                  Proaraiza93@outlook.com
                 </a>
               </li>
-              <li>3419 Preston Pointe Way<br />Cumming, GA 30041</li>
+              <li>302A Bald Ridge Rd<br />Cumming, GA 30040</li>
               <li>Mon-Sun: 7:00 AM - 7:00 PM</li>
             </ul>
           </div>
         </div>
 
         <div className="mt-12 border-t border-gray-800 pt-8 text-center text-xs text-gray-500">
-          <p>
-            &copy; {new Date().getFullYear()} Pro Araiza Remodeling & Painting.{" "}
+          <p className="text-gray-400">
+            Locally owned. Hispanic-owned. Family-run since 2016.
+          </p>
+          <p className="mt-3">
+            &copy; {new Date().getFullYear()} PROARAIZA LLC Remodeling & Painting.{" "}
             {t.footer.rights}
           </p>
-          <p className="mt-1">{t.footer.serving}</p>
+          <p className="mt-1">{t.footer.serving} · All work backed by our 2-year workmanship warranty.</p>
         </div>
       </div>
     </footer>

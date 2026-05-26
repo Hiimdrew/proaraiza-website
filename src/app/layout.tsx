@@ -14,26 +14,26 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Pro Araiza Remodeling & Painting | Cumming, GA Painter",
+    default: "Pro Araiza Remodeling & Painting | Owner-Led Painting for North Atlanta",
     template: "%s | Pro Araiza Remodeling & Painting",
   },
   description:
-    "Professional painting and remodeling in Cumming, GA. Interior, exterior, cabinet painting, and full remodeling. Fully insured, free estimates. Call (843) 415-2437.",
+    "Owner-led, high-end painting and remodeling for North Atlanta's finest homes. 10 years, 250+ projects, 2-year workmanship warranty. Fully insured. Sherwin-Williams & Benjamin Moore. Call (843) 415-2437.",
   metadataBase: new URL("https://proaraiza-website.vercel.app"),
   openGraph: {
     type: "website",
     locale: "en_US",
     siteName: "Pro Araiza Remodeling & Painting",
-    title: "Pro Araiza Remodeling & Painting | Cumming, GA Painter",
+    title: "Pro Araiza Remodeling & Painting | Owner-Led Painting for North Atlanta",
     description:
-      "Professional painting and remodeling for North Atlanta homeowners. 15+ years, fully insured, free estimates. Call (843) 415-2437.",
+      "Owner-led, high-end painting for North Atlanta's finest homes. 10 years, 250+ projects, 2-year workmanship warranty. Call (843) 415-2437.",
     url: "https://proaraiza-website.vercel.app",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pro Araiza Remodeling & Painting | Cumming, GA Painter",
+    title: "Pro Araiza Remodeling & Painting | Owner-Led Painting for North Atlanta",
     description:
-      "Professional painting and remodeling for North Atlanta homeowners. 15+ years, fully insured, free estimates.",
+      "Owner-led, high-end painting and remodeling. 10 years, 250+ projects, fully insured, 2-year warranty.",
   },
 };
 
@@ -41,14 +41,20 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: "Pro Araiza Remodeling & Painting",
+  legalName: "PROARAIZA LLC REMODELING & PAINTING",
+  founder: {
+    "@type": "Person",
+    name: "Joaquin Araiza",
+  },
+  foundingDate: "2016",
   telephone: "(843) 415-2437",
-  email: "Diangel23@hotmail.com",
+  email: "Proaraiza93@outlook.com",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "3419 Preston Pointe Way",
+    streetAddress: "302A Bald Ridge Rd",
     addressLocality: "Cumming",
     addressRegion: "GA",
-    postalCode: "30041",
+    postalCode: "30040",
     addressCountry: "US",
   },
   geo: {
@@ -66,12 +72,29 @@ const jsonLd = {
     closes: "19:00",
   },
   areaServed: [
-    "Cumming", "Alpharetta", "Gainesville", "Buford",
-    "Roswell", "Woodstock", "Duluth", "Suwanee",
-    "Johns Creek", "Forsyth County",
+    "Cumming", "Alpharetta", "Marietta", "Roswell",
+    "Buford", "Woodstock", "Duluth", "Gainesville",
+    "Dacula", "Suwanee", "Johns Creek",
+    "Forsyth County", "North Atlanta",
   ],
-  priceRange: "$$",
-  url: "https://proaraiza.com",
+  priceRange: "$$$",
+  url: "https://proaraiza-website.vercel.app",
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Painting & Remodeling Services",
+    itemListElement: [
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Interior Painting" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Exterior Painting" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Cabinet Painting & Refinishing" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Deck Staining" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Remodeling & Drywall" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Commercial Painting" } },
+    ],
+  },
+  makesOffer: {
+    "@type": "Offer",
+    description: "2-year workmanship warranty on all painting and remodeling work",
+  },
 };
 
 export default function RootLayout({
