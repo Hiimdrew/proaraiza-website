@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import LazyVideo from "@/components/LazyVideo";
+import InlineCTA from "@/components/InlineCTA";
 import { motion } from "framer-motion";
 import VideoHero from "@/components/VideoHero";
 import CTABanner from "@/components/CTABanner";
@@ -295,6 +296,13 @@ export default function HomePage() {
         </svg>
       </div>
 
+      {/* Mid-page CTA — after Recent Projects */}
+      <InlineCTA
+        variant="light"
+        headline="Like what you see? Let&apos;s talk about your home."
+        subtext="Free written estimate within 24 hours. Joaquin walks every project personally."
+      />
+
       {/* Why Choose Us */}
       <section className="relative overflow-hidden py-28 lg:py-36">
         <FloatingShape className="right-20 top-32" size={120} delay={1} />
@@ -525,6 +533,13 @@ export default function HomePage() {
           </StaggerChildren>
         </div>
       </section>
+
+      {/* Mid-page CTA — after Testimonials */}
+      <InlineCTA
+        variant="dark"
+        headline="Want a finish like this in your home?"
+        subtext="Most projects start within 2 weeks. Punctual, clean, and proud of every brushstroke."
+      />
 
       {/* Blog Preview */}
       <section className="bg-brand-gray py-28 lg:py-36">

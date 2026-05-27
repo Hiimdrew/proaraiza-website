@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Get a Free Quote",
+  title: "Get a Free Estimate",
   description:
     "Request a free painting or remodeling estimate from Pro Araiza. Serving Cumming, GA and the North Atlanta suburbs. Call (843) 415-2437.",
 };
@@ -13,7 +13,7 @@ export default function ContactPage() {
       <section className="bg-brand-black py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-            Get a Free Quote
+            Get a Free Estimate
           </h1>
           <p className="mt-4 text-lg text-gray-300">
             Tell us about your project and we will get back to you within 24 hours
@@ -118,7 +118,7 @@ export default function ContactPage() {
                   type="submit"
                   className="w-full rounded-md bg-brand-gold px-8 py-3.5 text-sm font-semibold text-brand-black transition hover:bg-brand-copper sm:w-auto"
                 >
-                  Get My Free Quote
+                  Get My Free Estimate
                 </button>
               </form>
             </div>

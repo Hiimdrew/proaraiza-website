@@ -1,17 +1,20 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import CTABanner from "@/components/CTABanner";
+import InlineCTA from "@/components/InlineCTA";
 
 export const metadata: Metadata = {
-  title: "Painting & Remodeling Services | Cumming, GA",
+  title: "Painting & Remodeling Services | North Atlanta",
   description:
-    "Interior painting, exterior painting, cabinet refinishing, and remodeling services in Cumming, GA. Pro Araiza — one team for everything. Free estimates.",
+    "Owner-led painting and remodeling across North Atlanta. Interior, exterior, cabinets, deck staining, light remodeling, and commercial. 10 years, 250+ projects, 2-year workmanship warranty.",
 };
 
 const services = [
   {
     name: "Interior Painting",
     href: "/interior-painting",
+    image: "/images/projects/hallway-wainscoting.jpg",
     bullets: [
       "Walls, ceilings, trim, and accent walls",
       "Bedrooms, living rooms, kitchens, bathrooms",
@@ -22,6 +25,7 @@ const services = [
   {
     name: "Exterior Painting",
     href: "/exterior-painting",
+    image: "/images/projects/exterior-black-garage.jpg",
     bullets: [
       "Hardie board, wood, brick, stucco",
       "Trim, shutters, doors, garage doors",
@@ -32,6 +36,7 @@ const services = [
   {
     name: "Cabinet Painting & Refinishing",
     href: "/cabinet-painting",
+    image: "/images/projects/luxury-kitchen-chandelier.jpg",
     bullets: [
       "Full kitchen cabinet transformations",
       "Two-tone and single-color options",
@@ -40,13 +45,36 @@ const services = [
     ],
   },
   {
+    name: "Deck Staining",
+    href: "/deck-staining",
+    image: "/images/projects/deck-timber-frame.jpg",
+    bullets: [
+      "Premium semi-transparent stains",
+      "Strip, sand, brighten, seal",
+      "Decks, railings, ceiling trusses",
+      "5-7 years of protection",
+    ],
+  },
+  {
     name: "Remodeling & Drywall",
     href: "/remodeling",
+    image: "/images/projects/bare-wood-sanded.jpg",
     bullets: [
       "Drywall repair and installation",
       "Trim, molding, and wainscoting",
       "Hardwood floor refinishing",
       "Bathroom and kitchen renovations",
+    ],
+  },
+  {
+    name: "Commercial Painting",
+    href: "/commercial",
+    image: "/images/projects/commercial-hallway.jpg",
+    bullets: [
+      "Boutique retail, professional offices",
+      "Medical suites and hospitality",
+      "Night and weekend scheduling",
+      "Commercial-grade washable finishes",
     ],
   },
 ];
@@ -111,11 +139,27 @@ export default function ServicesPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-              Painting &amp; Remodeling Services in Cumming, GA
+              Painting &amp; Remodeling Services for North Atlanta
             </h1>
             <p className="mt-6 text-lg text-gray-300">
-              From a single room to a full home transformation — we do it all.
+              From a single accent wall to a full home transformation — owner-led,
+              craftsman-run, and backed by a 2-year workmanship warranty on every
+              project.
             </p>
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+              <Link
+                href="/contact"
+                className="rounded-md bg-brand-gold px-8 py-3.5 text-center text-sm font-semibold text-brand-black transition hover:bg-brand-copper"
+              >
+                Get a Free Estimate
+              </Link>
+              <a
+                href="tel:8434152437"
+                className="rounded-md border border-gray-600 px-8 py-3.5 text-center text-sm font-semibold text-white transition hover:border-brand-gold hover:text-brand-gold"
+              >
+                Call (843) 415-2437
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -123,14 +167,22 @@ export default function ServicesPage() {
       {/* Service Cards */}
       <section className="py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-8 sm:grid-cols-2">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => (
               <Link
                 key={service.href}
                 href={service.href}
-                className="group rounded-xl border border-gray-200 p-8 transition hover:border-brand-gold hover:shadow-lg"
+                className="group rounded-xl border border-gray-200 p-6 transition hover:border-brand-gold hover:shadow-lg"
               >
-                <div className="aspect-[16/9] rounded-lg bg-brand-gray" />
+                <div className="relative aspect-[16/9] overflow-hidden rounded-lg">
+                  <Image
+                    src={service.image}
+                    alt={service.name}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                </div>
                 <h2 className="mt-6 text-2xl font-bold text-brand-black group-hover:text-brand-gold">
                   {service.name}
                 </h2>
@@ -193,6 +245,12 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+
+      <InlineCTA
+        variant="dark"
+        headline="Not sure which service you need?"
+        subtext="Tell us about your project. We&apos;ll help you scope it out, free of charge."
+      />
 
       {/* FAQ */}
       <section className="py-16 lg:py-24">

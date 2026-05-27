@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import CTABanner from "./CTABanner";
+import InlineCTA from "./InlineCTA";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 interface CityPageProps {
@@ -171,6 +172,12 @@ export default function CityPageTemplate({ city, intro, introEs, neighborhoods, 
           </div>
         </div>
       </section>
+
+      <InlineCTA
+        variant="dark"
+        headline={`Have more questions about your ${city} project?`}
+        subtext="We answer texts, calls, and emails within a few hours, 7 days a week."
+      />
 
       <CTABanner
         headline={`${t.city.readyTitle} ${city}${t.city.readyTitleSuffix}`}

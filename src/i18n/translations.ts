@@ -24,14 +24,14 @@ export const translations = {
       line2Accent: "North Atlanta's Finest Homes",
       subtitle:
         "Owner-led, high-end work for the homes you care most about. Joaquin Araiza has finished 250+ projects across Forsyth, Fulton, and Cobb. Punctual, clean, and proud of every brushstroke. Sherwin-Williams & Benjamin Moore. Fully insured with a 2-year workmanship warranty.",
-      cta: "Get a Free Quote",
+      cta: "Get a Free Estimate",
       scroll: "Scroll",
     },
     cta: {
       defaultHeadline: "Ready to Transform Your Home?",
       defaultSubtext:
         "Get a free, no-obligation estimate today. We respond within 24 hours.",
-      button: "Get a Free Quote",
+      button: "Get a Free Estimate",
       callPrefix: "Or call",
     },
     mobile: {
@@ -54,7 +54,7 @@ export const translations = {
       trustedBy: "Trusted by",
       localPainter: "Your Local Painter in",
       getEstimate: "Get a Free Estimate",
-      getQuote: "Get a Free Quote",
+      getQuote: "Get a Free Estimate",
       call: "Call",
       servicesTitle: "Services Available in",
       neighborhoodsTitle: "Neighborhoods We Serve in",

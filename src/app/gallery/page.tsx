@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import type { Metadata } from "next";
+import Link from "next/link";
+import CTABanner from "@/components/CTABanner";
+import InlineCTA from "@/components/InlineCTA";
 
 const categories = [
   "All",
@@ -39,13 +41,30 @@ export default function GalleryPage() {
       {/* Hero */}
       <section className="bg-brand-black py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-            Our Work
-          </h1>
-          <p className="mt-4 text-lg text-gray-300">
-            See the quality of our painting and remodeling projects across Forsyth
-            County and the North Atlanta suburbs.
-          </p>
+          <div className="max-w-3xl">
+            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
+              Our Work
+            </h1>
+            <p className="mt-4 text-lg text-gray-300">
+              250+ painting and remodeling projects across North Atlanta.
+              Interiors, exteriors, cabinets, decks, and full renovations —
+              every project led personally by Joaquin Araiza.
+            </p>
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+              <Link
+                href="/contact"
+                className="rounded-md bg-brand-gold px-8 py-3.5 text-center text-sm font-semibold text-brand-black transition hover:bg-brand-copper"
+              >
+                Get a Free Estimate
+              </Link>
+              <a
+                href="tel:8434152437"
+                className="rounded-md border border-gray-600 px-8 py-3.5 text-center text-sm font-semibold text-white transition hover:border-brand-gold hover:text-brand-gold"
+              >
+                Call (843) 415-2437
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -98,6 +117,16 @@ export default function GalleryPage() {
         </div>
       </section>
 
+      <InlineCTA
+        variant="dark"
+        headline="See a finish you love? Let&apos;s make yours next."
+        subtext="Free written estimate within 24 hours. Most projects start within 2 weeks."
+      />
+
+      <CTABanner
+        headline="Ready to Transform Your Home?"
+        subtext="Tell us about your project. We respond within 24 hours, 7 days a week."
+      />
       <div className="h-16 lg:hidden" />
     </>
   );
