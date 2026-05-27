@@ -75,7 +75,7 @@ export default function CityPageTemplate({ city, intro, introEs, neighborhoods, 
       {/* Intro */}
       <section className="py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-2">
+          <div className={image ? "grid gap-12 lg:grid-cols-2" : "max-w-3xl"}>
             <div>
               <h2 className="text-3xl font-bold tracking-tight text-brand-black sm:text-4xl">
                 {t.city.localPainter} {city}, GA
@@ -90,7 +90,7 @@ export default function CityPageTemplate({ city, intro, introEs, neighborhoods, 
                 </Link>
               </div>
             </div>
-            {image ? (
+            {image && (
               <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
                 <Image
                   src={image.src}
@@ -100,8 +100,6 @@ export default function CityPageTemplate({ city, intro, introEs, neighborhoods, 
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
-            ) : (
-              <div className="aspect-[4/3] rounded-xl bg-brand-gray" />
             )}
           </div>
         </div>

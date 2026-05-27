@@ -31,7 +31,7 @@ export default function PaintingBufordPage() {
         },
         {
           q: "Who is the best painter in Buford, GA?",
-          a: "Pro Araiza Remodeling & Painting has over 15 years of experience serving Buford and the surrounding communities. We are fully insured, locally owned, and offer free estimates on all painting and remodeling projects.",
+          a: "Pro Araiza Remodeling & Painting has 10 years of experience and 250+ completed projects serving Buford and the surrounding communities. We are fully insured, locally owned, and offer free estimates on all painting and remodeling projects.",
         },
         {
           q: "Does Pro Araiza serve Buford?",

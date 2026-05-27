@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import CTABanner from "@/components/CTABanner";
 import InlineCTA from "@/components/InlineCTA";
@@ -10,26 +11,75 @@ const categories = [
   "Interior Painting",
   "Exterior Painting",
   "Cabinets",
-  "Remodeling",
+  "Deck Staining",
   "Trim & Detail",
+  "Commercial",
 ];
 
 const projects = [
-  { title: "Living Room Repaint", category: "Interior Painting", city: "Cumming, GA" },
-  { title: "Master Bedroom Accent Wall", category: "Interior Painting", city: "Alpharetta, GA" },
-  { title: "Kitchen & Dining Refresh", category: "Interior Painting", city: "Roswell, GA" },
-  { title: "Full Exterior Repaint", category: "Exterior Painting", city: "Cumming, GA" },
-  { title: "Hardie Board Siding", category: "Exterior Painting", city: "Woodstock, GA" },
-  { title: "Brick Home Exterior", category: "Exterior Painting", city: "Buford, GA" },
-  { title: "White Dove Kitchen Cabinets", category: "Cabinets", city: "Cumming, GA" },
-  { title: "Two-Tone Kitchen Transformation", category: "Cabinets", city: "Alpharetta, GA" },
-  { title: "Navy Island + White Uppers", category: "Cabinets", city: "Roswell, GA" },
-  { title: "Board-and-Batten Hallway", category: "Remodeling", city: "Cumming, GA" },
-  { title: "Bathroom Tile & Vanity", category: "Remodeling", city: "Gainesville, GA" },
-  { title: "Basement Finishing", category: "Remodeling", city: "Woodstock, GA" },
-  { title: "Crown Molding Install", category: "Trim & Detail", city: "Cumming, GA" },
-  { title: "Wainscoting & Chair Rail", category: "Trim & Detail", city: "Alpharetta, GA" },
-  { title: "Custom Built-In Shelving", category: "Trim & Detail", city: "Roswell, GA" },
+  {
+    title: "Modern Kitchen & Dining",
+    category: "Interior Painting",
+    city: "Cumming, GA",
+    image: "/images/projects/kitchen-gray-walls.jpg",
+    description: "Light neutral gray walls with matte finish — bright, clean, and a fresh dining backdrop.",
+  },
+  {
+    title: "Premium Hallway with Wainscoting",
+    category: "Interior Painting",
+    city: "Roswell, GA",
+    image: "/images/projects/hallway-wainscoting.jpg",
+    description: "Custom built-in bench, wainscoting, and crown molding in semi-gloss white with a soft cream upper wall.",
+  },
+  {
+    title: "Luxury Kitchen Cabinet Refinishing",
+    category: "Cabinets",
+    city: "Alpharetta, GA",
+    image: "/images/projects/luxury-kitchen-chandelier.jpg",
+    description: "Factory-quality white cabinet refinishing with recessed LED lighting and a custom pendant chandelier.",
+  },
+  {
+    title: "Warm White Cabinets",
+    category: "Cabinets",
+    city: "Marietta, GA",
+    image: "/images/projects/cabinets-warm-white.jpg",
+    description: "Smooth professional warm white cabinets with satin sheen against a greige wall and crisp flat-white ceiling.",
+  },
+  {
+    title: "Satin Black Exterior Trim",
+    category: "Exterior Painting",
+    city: "Cumming, GA",
+    image: "/images/projects/exterior-black-garage.jpg",
+    description: "Garage doors, decorative arches, gutters, and trim in premium satin black — bold contrast against the brick.",
+  },
+  {
+    title: "Stucco Exterior Repaint",
+    category: "Exterior Painting",
+    city: "Alpharetta, GA",
+    image: "/images/projects/stucco-exterior.jpg",
+    description: "Uniform neutral stucco walls with crisp white trim, moldings, and garage doors.",
+  },
+  {
+    title: "Timber-Frame Deck Restoration",
+    category: "Deck Staining",
+    city: "Marietta, GA",
+    image: "/images/projects/deck-timber-frame.jpg",
+    description: "Premium semi-transparent stain on the entire deck — flooring, railings, and exposed ceiling trusses.",
+  },
+  {
+    title: "Natural Wood Restoration",
+    category: "Trim & Detail",
+    city: "Cumming, GA",
+    image: "/images/projects/bare-wood-sanded.jpg",
+    description: "Flawless sanding down to bare wood, clear water-based sealer, satin/matte sheen. Modern, bright, and built to last.",
+  },
+  {
+    title: "Commercial Office Hallway",
+    category: "Commercial",
+    city: "North Atlanta, GA",
+    image: "/images/projects/commercial-hallway.jpg",
+    description: "High-contrast palette of deep navy and crisp off-white for a premium professional office corridor.",
+  },
 ];
 
 export default function GalleryPage() {
@@ -93,10 +143,18 @@ export default function GalleryPage() {
             {filtered.map((project) => (
               <div
                 key={project.title}
-                className="overflow-hidden rounded-xl border border-gray-200 transition hover:shadow-md"
+                className="group overflow-hidden rounded-xl border border-gray-200 transition hover:shadow-lg hover:border-brand-gold"
               >
-                <div className="aspect-[4/3] bg-gray-200" />
-                <div className="p-4">
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                </div>
+                <div className="p-5">
                   <p className="text-xs font-medium uppercase tracking-wider text-brand-gold">
                     {project.category}
                   </p>
@@ -104,6 +162,9 @@ export default function GalleryPage() {
                     {project.title}
                   </h3>
                   <p className="text-sm text-brand-text-light">{project.city}</p>
+                  <p className="mt-3 text-sm leading-relaxed text-brand-text">
+                    {project.description}
+                  </p>
                 </div>
               </div>
             ))}

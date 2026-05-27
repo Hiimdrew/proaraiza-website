@@ -31,7 +31,7 @@ export default function PaintingWoodstockPage() {
         },
         {
           q: "Who is the best painter in Woodstock, GA?",
-          a: "Pro Araiza Remodeling & Painting has served Woodstock and Cherokee County homeowners for over 15 years. We are fully insured, family-owned, and available 7 days a week for painting, remodeling, and cabinet refinishing.",
+          a: "Pro Araiza Remodeling & Painting has served Woodstock and Cherokee County homeowners for 10 years across 250+ projects. We are fully insured, family-owned, and available 7 days a week for painting, remodeling, and cabinet refinishing.",
         },
         {
           q: "Does Pro Araiza serve Woodstock?",

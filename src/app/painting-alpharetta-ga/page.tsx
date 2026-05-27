@@ -31,7 +31,7 @@ export default function PaintingAlpharettaPage() {
         },
         {
           q: "Who is the best painter in Alpharetta, GA?",
-          a: "Pro Araiza Remodeling & Painting serves Alpharetta and the surrounding North Fulton communities. With 15+ years of experience, full insurance coverage, and a focus on quality craftsmanship, we are the painting and remodeling team Alpharetta homeowners rely on.",
+          a: "Pro Araiza Remodeling & Painting serves Alpharetta and the surrounding North Fulton communities. With 10 years and 250+ completed projects, full insurance coverage, and a focus on quality craftsmanship, we are the painting and remodeling team Alpharetta homeowners rely on.",
         },
         {
           q: "Does Pro Araiza serve Alpharetta?",

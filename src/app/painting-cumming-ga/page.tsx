@@ -11,7 +11,7 @@ export default function PaintingCummingPage() {
   return (
     <CityPageTemplate
       city="Cumming"
-      intro="Pro Araiza Remodeling & Painting is based right here in Cumming, GA — it is our home and our community. For over 15 years, we have been painting and remodeling homes throughout Forsyth County. From the established neighborhoods near Sawnee Mountain to the newer developments along GA-400, we know the homes here inside and out. Craftsman-style builds with Hardie board siding, open-concept interiors with tall ceilings, and white Shaker kitchens ready for a color refresh — these are the projects we handle every week. When you hire Pro Araiza, you are hiring your neighbors."
+      intro="Pro Araiza Remodeling & Painting is based right here in Cumming, GA — it is our home and our community. For 10 years and 250+ projects, we have been painting and remodeling homes throughout Forsyth County. From the established neighborhoods near Sawnee Mountain to the newer developments along GA-400, we know the homes here inside and out. Craftsman-style builds with Hardie board siding, open-concept interiors with tall ceilings, and white Shaker kitchens ready for a color refresh — these are the projects we handle every week. When you hire Pro Araiza, you are hiring your neighbors."
       neighborhoods={[
         "Polo Club",
         "Windermere",
@@ -31,7 +31,7 @@ export default function PaintingCummingPage() {
         },
         {
           q: "Who is the best painter in Cumming, GA?",
-          a: "Pro Araiza Remodeling & Painting has served Cumming and Forsyth County homeowners for over 15 years. We are fully insured, locally owned, and available 7 days a week. Our work spans interior painting, exterior painting, cabinet refinishing, and full remodeling.",
+          a: "Pro Araiza Remodeling & Painting has served Cumming and Forsyth County homeowners for 10 years across 250+ projects. We are fully insured, locally owned, and available 7 days a week. Our work spans interior painting, exterior painting, cabinet refinishing, and full remodeling.",
         },
         {
           q: "Does Pro Araiza serve all of Forsyth County?",

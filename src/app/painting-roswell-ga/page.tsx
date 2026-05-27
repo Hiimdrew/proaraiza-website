@@ -11,7 +11,7 @@ export default function PaintingRoswellPage() {
   return (
     <CityPageTemplate
       city="Roswell"
-      intro="Roswell blends historic charm with modern living, and our painting and remodeling services reflect that range. From the century-old homes along Canton Street that need careful prep work and period-appropriate colors to the newer construction in East Roswell that benefits from modern color palettes — we tailor our approach to every home. Roswell homeowners value quality and attention to detail, which is exactly what Pro Araiza has delivered across North Fulton County for over 15 years. Interior updates, dramatic exterior transformations, and kitchen cabinet refinishing are our most requested services in this area."
+      intro="Roswell blends historic charm with modern living, and our painting and remodeling services reflect that range. From the century-old homes along Canton Street that need careful prep work and period-appropriate colors to the newer construction in East Roswell that benefits from modern color palettes — we tailor our approach to every home. Roswell homeowners value quality and attention to detail, which is exactly what Pro Araiza has delivered across North Fulton County for 10 years across 250+ projects. Interior updates, dramatic exterior transformations, and kitchen cabinet refinishing are our most requested services in this area."
       neighborhoods={[
         "Historic Roswell",
         "Riverside",
@@ -31,7 +31,7 @@ export default function PaintingRoswellPage() {
         },
         {
           q: "Who is the best painter in Roswell, GA?",
-          a: "Pro Araiza Remodeling & Painting serves Roswell homeowners with 15+ years of experience. We are fully insured, handle both modern and older homes, and provide free estimates on all projects.",
+          a: "Pro Araiza Remodeling & Painting serves Roswell homeowners with 10 years and 250+ completed projects. We are fully insured, handle both modern and older homes, and provide free estimates on all projects.",
         },
         {
           q: "Does Pro Araiza serve Roswell?",

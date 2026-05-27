@@ -31,7 +31,7 @@ export default function PaintingGainesvillePage() {
         },
         {
           q: "Who is the best painter in Gainesville, GA?",
-          a: "Pro Araiza Remodeling & Painting has been serving Gainesville and Hall County homeowners for over 15 years. We are fully insured, locally operated out of Cumming, and handle everything from single rooms to full home transformations.",
+          a: "Pro Araiza Remodeling & Painting has been serving Gainesville and Hall County homeowners for 10 years across 250+ projects. We are fully insured, locally operated out of Cumming, and handle everything from single rooms to full home transformations.",
         },
         {
           q: "Does Pro Araiza serve Gainesville and Hall County?",

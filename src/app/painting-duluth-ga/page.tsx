@@ -11,7 +11,7 @@ export default function PaintingDuluthPage() {
   return (
     <CityPageTemplate
       city="Duluth"
-      intro="Pro Araiza Remodeling & Painting has been serving Duluth homeowners for over 15 years. Duluth sits right at the heart of Gwinnett County with a mix of well-established neighborhoods and newer townhome communities. Whether you have a 1990s traditional with dated trim colors, a newer build in Sugarloaf that needs a refresh, or an older ranch near downtown Duluth ready for a full exterior repaint, we handle it all. We know the building styles here — from the brick-front colonials along Peachtree Industrial to the Hardie-plank craftsman builds near Parsons Road. Interior repaints, cabinet refinishing, drywall repair, and full room renovations are all part of what we do every week in this area."
+      intro="Pro Araiza Remodeling & Painting has been serving Duluth homeowners for 10 years across 250+ projects. Duluth sits right at the heart of Gwinnett County with a mix of well-established neighborhoods and newer townhome communities. Whether you have a 1990s traditional with dated trim colors, a newer build in Sugarloaf that needs a refresh, or an older ranch near downtown Duluth ready for a full exterior repaint, we handle it all. We know the building styles here — from the brick-front colonials along Peachtree Industrial to the Hardie-plank craftsman builds near Parsons Road. Interior repaints, cabinet refinishing, drywall repair, and full room renovations are all part of what we do every week in this area."
       neighborhoods={[
         "Sugarloaf Country Club",
         "St. Ives Country Club",
@@ -33,7 +33,7 @@ export default function PaintingDuluthPage() {
         },
         {
           q: "Who is the best painter in Duluth, GA?",
-          a: "Pro Araiza Remodeling & Painting has been serving Duluth and Gwinnett County homeowners for over 15 years. We are fully insured, locally owned, and available 7 days a week from 7 AM to 7 PM. We handle interior painting, exterior painting, cabinet refinishing, drywall repair, and full remodeling.",
+          a: "Pro Araiza Remodeling & Painting has been serving Duluth and Gwinnett County homeowners for 10 years across 250+ projects. We are fully insured, locally owned, and available 7 days a week from 7 AM to 7 PM. We handle interior painting, exterior painting, cabinet refinishing, drywall repair, and full remodeling.",
         },
         {
           q: "Do you serve the Sugarloaf and Berkeley Lake areas?",
