@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   description:
     "Owner-led, high-end painting and remodeling for North Atlanta's finest homes. 10 years, 250+ projects, 2-year workmanship warranty. Fully insured. Sherwin-Williams & Benjamin Moore. Call (843) 415-2437.",
-  metadataBase: new URL("https://proaraiza-website.vercel.app"),
+  metadataBase: new URL("https://www.proaraizapainting.com"),
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     title: "Pro Araiza Remodeling & Painting | Owner-Led Painting for North Atlanta",
     description:
       "Owner-led, high-end painting for North Atlanta's finest homes. 10 years, 250+ projects, 2-year workmanship warranty. Call (843) 415-2437.",
-    url: "https://proaraiza-website.vercel.app",
+    url: "https://www.proaraizapainting.com",
   },
   twitter: {
     card: "summary_large_image",
@@ -78,7 +78,7 @@ const jsonLd = {
     "Forsyth County", "North Atlanta",
   ],
   priceRange: "$$$",
-  url: "https://proaraiza-website.vercel.app",
+  url: "https://www.proaraizapainting.com",
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Painting & Remodeling Services",

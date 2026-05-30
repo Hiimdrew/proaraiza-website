@@ -108,6 +108,11 @@ export default function Footer() {
             {t.footer.rights}
           </p>
           <p className="mt-1">{t.footer.serving} · All work backed by our 2-year workmanship warranty.</p>
+          <p className="mt-3">
+            <Link href="/privacy-policy" className="transition hover:text-brand-gold">
+              Privacy Policy
+            </Link>
+          </p>
         </div>
       </div>
     </footer>
