@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   title: "Get a Free Estimate",
@@ -28,99 +29,7 @@ export default function ContactPage() {
           <div className="grid gap-12 lg:grid-cols-5">
             {/* Form */}
             <div className="lg:col-span-3">
-              <form className="space-y-6">
-                <div className="grid gap-6 sm:grid-cols-2">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-brand-black">
-                      Name *
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      required
-                      className="mt-1 block w-full rounded-md border border-gray-300 px-4 py-3 text-sm focus:border-brand-gold focus:outline-none focus:ring-1 focus:ring-brand-gold"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-brand-black">
-                      Phone *
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      required
-                      className="mt-1 block w-full rounded-md border border-gray-300 px-4 py-3 text-sm focus:border-brand-gold focus:outline-none focus:ring-1 focus:ring-brand-gold"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid gap-6 sm:grid-cols-2">
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-brand-black">
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      className="mt-1 block w-full rounded-md border border-gray-300 px-4 py-3 text-sm focus:border-brand-gold focus:outline-none focus:ring-1 focus:ring-brand-gold"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="zip" className="block text-sm font-medium text-brand-black">
-                      Zip Code *
-                    </label>
-                    <input
-                      type="text"
-                      id="zip"
-                      name="zip"
-                      required
-                      className="mt-1 block w-full rounded-md border border-gray-300 px-4 py-3 text-sm focus:border-brand-gold focus:outline-none focus:ring-1 focus:ring-brand-gold"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="service" className="block text-sm font-medium text-brand-black">
-                    Service Type *
-                  </label>
-                  <select
-                    id="service"
-                    name="service"
-                    required
-                    className="mt-1 block w-full rounded-md border border-gray-300 px-4 py-3 text-sm focus:border-brand-gold focus:outline-none focus:ring-1 focus:ring-brand-gold"
-                  >
-                    <option value="">Select a service...</option>
-                    <option value="interior">Interior Painting</option>
-                    <option value="exterior">Exterior Painting</option>
-                    <option value="cabinets">Cabinet Painting</option>
-                    <option value="remodeling">Remodeling</option>
-                    <option value="pressure-washing">Pressure Washing</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-brand-black">
-                    Tell us about your project
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={4}
-                    className="mt-1 block w-full rounded-md border border-gray-300 px-4 py-3 text-sm focus:border-brand-gold focus:outline-none focus:ring-1 focus:ring-brand-gold"
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full rounded-md bg-brand-gold px-8 py-3.5 text-sm font-semibold text-brand-black transition hover:bg-brand-copper sm:w-auto"
-                >
-                  Get My Free Estimate
-                </button>
-              </form>
+              <ContactForm />
             </div>
 
             {/* Contact Info */}
