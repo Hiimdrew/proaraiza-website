@@ -561,7 +561,7 @@ export default function HomePage() {
 
           <StaggerChildren className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3" staggerDelay={0.15}>
             {[
-              { title: "How Much Does It Cost to Paint a House in Georgia?", excerpt: "A room-by-room breakdown of what Georgia homeowners actually pay for professional painting in 2026.", href: "/blog/cost-to-paint-house-georgia", image: "/images/blog/cost-to-paint-house-georgia.jpg" },
+              { title: "Best Exterior Paint Colors for North Atlanta Homes (2026)", excerpt: "Warm whites, greiges, navies, charcoals, and sage greens, with the exact shades that hold up in Georgia's climate.", href: "/blog/exterior-paint-colors-north-atlanta", image: "/images/blog/exterior-paint-colors-north-atlanta.jpg" },
               { title: "7 Questions to Ask Before Hiring a Painting Contractor", excerpt: "Protect yourself and your home with these essential questions every homeowner should ask.", href: "/blog/questions-to-ask-painting-contractor", image: "/images/blog/questions-to-ask-painting-contractor.jpg" },
               { title: "Best Time to Paint Your Home Exterior in Georgia", excerpt: "Spring, summer, or fall? Here is when Georgia weather gives you the best results.", href: "/blog/best-time-to-paint-exterior-georgia", image: "/images/blog/best-time-to-paint-exterior-georgia.jpg" },
             ].map((post) => (

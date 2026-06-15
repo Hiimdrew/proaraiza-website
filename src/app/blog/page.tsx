@@ -11,13 +11,13 @@ export const metadata: Metadata = {
 
 const posts = [
   {
-    title: "How Much Does It Cost to Paint a House in Georgia?",
+    title: "Best Exterior Paint Colors for North Atlanta Homes (2026)",
     excerpt:
-      "A room-by-room breakdown of what Georgia homeowners actually pay for professional painting in 2026. Interior and exterior costs, factors that affect price, and when it makes sense to hire a pro.",
-    href: "/blog/cost-to-paint-house-georgia",
-    image: "/images/blog/cost-to-paint-house-georgia.jpg",
-    date: "2026-01-15",
-    readTime: "8 min read",
+      "Warm whites, greiges, navies, charcoals, and sage greens, with the exact Sherwin-Williams and Benjamin Moore shades that hold up in Georgia's heat, humidity, and tree-shade.",
+    href: "/blog/exterior-paint-colors-north-atlanta",
+    image: "/images/blog/exterior-paint-colors-north-atlanta.jpg",
+    date: "2026-05-30",
+    readTime: "7 min read",
   },
   {
     title: "7 Questions to Ask Before Hiring a Painting Contractor",

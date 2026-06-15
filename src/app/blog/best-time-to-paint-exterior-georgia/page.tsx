@@ -196,8 +196,8 @@ export default function BestTimePaintPage() {
                 </Link>
               </li>
               <li>
-                <Link href="/blog/cost-to-paint-house-georgia" className="text-sm text-brand-gold hover:text-brand-copper">
-                  How Much Does It Cost to Paint a House in Georgia? →
+                <Link href="/blog/exterior-paint-colors-north-atlanta" className="text-sm text-brand-gold hover:text-brand-copper">
+                  Best Exterior Paint Colors for North Atlanta Homes →
                 </Link>
               </li>
               <li>
