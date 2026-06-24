@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import MobileStickyBar from "@/components/MobileStickyBar";
 import ScrollProgressWrapper from "@/components/ScrollProgressWrapper";
 import Providers from "@/components/Providers";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -118,6 +119,7 @@ export default function RootLayout({
           <Footer />
           <MobileStickyBar />
         </Providers>
+        <Analytics />
       </body>
     </html>
   );
