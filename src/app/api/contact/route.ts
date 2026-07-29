@@ -9,13 +9,23 @@ const RESEND_ENDPOINT = "https://api.resend.com/emails";
 const TURNSTILE_VERIFY =
   "https://challenges.cloudflare.com/turnstile/v0/siteverify";
 
+// Client tag. Prefixes every lead subject so a single shared Presence Pulse
+// inbox can filter/label leads per client (e.g. "[Pro Araiza] New estimate...").
+// Each new client site changes only this constant.
+const CLIENT = "Pro Araiza";
+
 // Delivery targets (not secret). Leads go to both of Joaquin's inboxes so he
-// never misses one while he's still living in Outlook, with Drew CC'd.
+// never misses one while he's still living in Outlook, plus the Presence Pulse
+// inbox so Drew has a running record of every client's leads in one place.
 const LEAD_TO = ["Joaquin@proaraizapainting.com", "Proaraiza93@outlook.com"];
-const LEAD_CC = ["dmays83@gmail.com"];
-// Until proaraizapainting.com is verified in Resend, send from Resend's shared
-// sender. Flip this to leads@proaraizapainting.com once the domain is verified.
-const LEAD_FROM = "Pro Araiza Website <onboarding@resend.dev>";
+const LEAD_CC = ["drew.m@presencepulse.digital"];
+
+// Sender must be a Resend-VERIFIED domain or mail silently fails to reach
+// third parties (the shared onboarding@resend.dev sender only reliably
+// delivers to the Resend account owner). gecproposals.com is the currently
+// verified domain. The display name carries the client branding.
+// Switch to leads@presencepulse.digital once that domain is verified.
+const LEAD_FROM = `${CLIENT} Website <leads@gecproposals.com>`;
 
 // --- Best-effort per-IP rate limit (Turnstile is the real bot wall) ----------
 // In-memory: persists within a warm instance. Upgrade to Vercel KV / Upstash if
@@ -156,7 +166,7 @@ export async function POST(request: NextRequest) {
     from: LEAD_FROM,
     to: LEAD_TO,
     cc: LEAD_CC,
-    subject: `New estimate request: ${name} (${service})`,
+    subject: `[${CLIENT}] New estimate request: ${name} (${service})`,
     html,
     text,
   };
