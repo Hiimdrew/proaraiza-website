@@ -7,6 +7,11 @@ import MobileStickyBar from "@/components/MobileStickyBar";
 import ScrollProgressWrapper from "@/components/ScrollProgressWrapper";
 import Providers from "@/components/Providers";
 import { Analytics } from "@vercel/analytics/next";
+import Script from "next/script";
+
+// GA4 measurement ID for Joaquin's "Pro Araiza" property. Public by design —
+// it ships in the client bundle either way, so no env var for it.
+const GA_ID = "G-KG1YRW4803";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -120,6 +125,13 @@ export default function RootLayout({
           <MobileStickyBar />
         </Providers>
         <Analytics />
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_ID}');`}
+        </Script>
       </body>
     </html>
   );
