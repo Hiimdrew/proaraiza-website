@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { useLanguage } from "@/i18n/LanguageContext";
 
@@ -32,11 +33,15 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-brand-black text-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between lg:h-20">
-          <Link href="/" className="flex items-center gap-2">
-            <span className="text-xl font-bold tracking-tight lg:text-2xl">
-              <span className="text-white">PRO</span>{" "}
-              <span className="text-brand-gold">ARAIZA</span>
-            </span>
+          <Link href="/" className="flex items-center gap-2" aria-label="Pro Araiza Remodeling & Painting — home">
+            <Image
+              src="/images/pa-logo-mark.png"
+              alt="Pro Araiza Remodeling & Painting"
+              width={431}
+              height={316}
+              priority
+              className="h-10 w-auto lg:h-12"
+            />
           </Link>
 
           <nav className="hidden lg:flex lg:items-center lg:gap-6">

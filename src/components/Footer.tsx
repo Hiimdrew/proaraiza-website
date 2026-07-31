@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 const serviceAreas = [
@@ -32,11 +33,14 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <div className="text-xl font-bold tracking-tight">
-              <span className="text-white">PRO</span>{" "}
-              <span className="text-brand-gold">ARAIZA</span>
-            </div>
-            <p className="mt-1 text-xs text-gray-500">{t.footer.tagline}</p>
+            <Image
+              src="/images/pa-logo-full.png"
+              alt="Pro Araiza Remodeling & Painting"
+              width={435}
+              height={418}
+              className="h-20 w-auto"
+            />
+            <p className="mt-3 text-xs text-gray-500">{t.footer.tagline}</p>
             <p className="mt-4 text-sm leading-relaxed">
               {t.footer.description}
             </p>
