@@ -133,10 +133,10 @@ export default function PrivacyPolicyPage() {
               <li>
                 <span className="font-semibold text-brand-black">Email:</span>{" "}
                 <a
-                  href="mailto:Proaraiza93@outlook.com"
+                  href="mailto:joaquin@proaraizapainting.com"
                   className="text-brand-gold hover:underline"
                 >
-                  Proaraiza93@outlook.com
+                  joaquin@proaraizapainting.com
                 </a>
               </li>
               <li>

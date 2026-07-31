@@ -89,8 +89,8 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="mailto:Proaraiza93@outlook.com" className="transition hover:text-brand-gold">
-                  Proaraiza93@outlook.com
+                <a href="mailto:joaquin@proaraizapainting.com" className="transition hover:text-brand-gold">
+                  joaquin@proaraizapainting.com
                 </a>
               </li>
               <li>302A Bald Ridge Rd<br />Cumming, GA 30040</li>

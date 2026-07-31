@@ -54,7 +54,7 @@ const jsonLd = {
   },
   foundingDate: "2016",
   telephone: "(843) 415-2437",
-  email: "Proaraiza93@outlook.com",
+  email: "joaquin@proaraizapainting.com",
   address: {
     "@type": "PostalAddress",
     streetAddress: "302A Bald Ridge Rd",
