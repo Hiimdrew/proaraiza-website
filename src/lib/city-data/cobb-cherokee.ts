@@ -7,7 +7,7 @@ export const cobbCherokee: City[] = [
     county: "Cobb County",
     region: "west-metro",
     driveTime: "About 45 minutes from our Cumming shop",
-    title: "Painter in Marietta, GA | Pro Araiza",
+    title: "Painter in Marietta, GA",
     description:
       "Interior and exterior painting in Marietta, GA. Historic square homes, 1970s ranches, brick-and-siding subdivisions, cabinet refinishing. Free estimates.",
     answer:
@@ -63,7 +63,7 @@ export const cobbCherokee: City[] = [
     county: "Cherokee County",
     region: "north-metro",
     driveTime: "About 40 minutes from our Cumming shop",
-    title: "Painter in Woodstock, GA | Pro Araiza",
+    title: "Painter in Woodstock, GA",
     description:
       "Interior, exterior, and cabinet painting in Woodstock, GA. Craftsman subdivisions, downtown infill, decks. Fully insured, 10 years local. Free estimates.",
     answer:
@@ -119,7 +119,7 @@ export const cobbCherokee: City[] = [
     county: "Cherokee County",
     region: "north-metro",
     driveTime: "About 35 minutes from our Cumming shop",
-    title: "Painter in Canton, GA | Pro Araiza",
+    title: "Painter in Canton, GA",
     description:
       "Painting contractor serving Canton, GA. New construction, established subdivisions, decks, cabinet refinishing. Fully insured. Free written estimates.",
     answer:

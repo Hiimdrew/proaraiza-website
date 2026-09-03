@@ -7,7 +7,7 @@ export const hallNortheast: City[] = [
     county: "Hall County",
     region: "north-metro",
     driveTime: "About 30 minutes from our Cumming shop",
-    title: "Painter in Gainesville, GA | Pro Araiza",
+    title: "Painter in Gainesville, GA",
     description:
       "Interior, exterior, and cabinet painting in Gainesville, GA. Lake Lanier homes, historic districts, decks and docks. Fully insured. Free written estimates.",
     answer:
@@ -63,7 +63,7 @@ export const hallNortheast: City[] = [
     county: "Hall County",
     region: "north-metro",
     driveTime: "About 30 minutes from our Cumming shop",
-    title: "Painter in Flowery Branch, GA | Pro Araiza",
+    title: "Painter in Flowery Branch, GA",
     description:
       "Interior, exterior, and deck work in Flowery Branch, GA. Lake-adjacent homes, newer subdivisions, cabinet refinishing. Fully insured. Free estimates.",
     answer:
@@ -118,7 +118,7 @@ export const hallNortheast: City[] = [
     county: "Jackson, Hall, Barrow, and Gwinnett Counties",
     region: "north-metro",
     driveTime: "About 40 minutes from our Cumming shop",
-    title: "Painter in Braselton, GA | Pro Araiza",
+    title: "Painter in Braselton, GA",
     description:
       "Interior, exterior, and cabinet painting in Braselton, GA. Chateau Elan area homes, newer subdivisions, larger lots. Fully insured. Free estimates.",
     answer:

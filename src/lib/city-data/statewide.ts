@@ -7,7 +7,7 @@ export const statewide: City[] = [
     county: "Chatham County",
     region: "statewide",
     driveTime: "We travel for Savannah work and stay on site through the project",
-    title: "Painter in Savannah, GA | Pro Araiza",
+    title: "Painter in Savannah, GA",
     description:
       "Painting contractor working in Savannah, GA. Historic district exteriors, coastal humidity and salt air, interior and cabinet work. Free written estimates.",
     answer:
@@ -62,7 +62,7 @@ export const statewide: City[] = [
     county: "Richmond County",
     region: "statewide",
     driveTime: "We travel for Augusta work and stay on site through the project",
-    title: "Painter in Augusta, GA | Pro Araiza",
+    title: "Painter in Augusta, GA",
     description:
       "Painting contractor working in Augusta, GA. Historic Summerville and Olde Town homes, suburban exteriors, cabinet refinishing. Free written estimates.",
     answer:
@@ -117,7 +117,7 @@ export const statewide: City[] = [
     county: "Gwinnett County",
     region: "north-metro",
     driveTime: "About 40 minutes from our Cumming shop",
-    title: "Painter in Lawrenceville, GA | Pro Araiza",
+    title: "Painter in Lawrenceville, GA",
     description:
       "Interior, exterior, and cabinet painting in Lawrenceville, GA. Historic square homes, 1990s subdivisions, siding repair. Fully insured. Free estimates.",
     answer:

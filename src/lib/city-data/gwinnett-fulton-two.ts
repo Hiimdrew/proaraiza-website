@@ -7,7 +7,7 @@ export const gwinnettFultonTwo: City[] = [
     county: "Gwinnett County",
     region: "north-metro",
     driveTime: "About 40 minutes from our Cumming shop",
-    title: "Painter in Dacula, GA | Pro Araiza",
+    title: "Painter in Dacula, GA",
     description:
       "Interior, exterior, and cabinet painting in Dacula, GA. Established subdivisions, larger lots, deck staining. Fully insured, 10 years local. Free estimates.",
     answer:
@@ -62,7 +62,7 @@ export const gwinnettFultonTwo: City[] = [
     county: "Gwinnett County",
     region: "north-metro",
     driveTime: "About 25 minutes from our Cumming shop",
-    title: "Painter in Sugar Hill, GA | Pro Araiza",
+    title: "Painter in Sugar Hill, GA",
     description:
       "Interior, exterior, and cabinet painting in Sugar Hill, GA. Established subdivisions, lake-adjacent homes, decks. Fully insured. Free written estimates.",
     answer:
@@ -117,7 +117,7 @@ export const gwinnettFultonTwo: City[] = [
     county: "Gwinnett County",
     region: "north-metro",
     driveTime: "About 40 minutes from our Cumming shop",
-    title: "Painter in Peachtree Corners, GA | Pro Araiza",
+    title: "Painter in Peachtree Corners, GA",
     description:
       "Interior, exterior, and cabinet painting in Peachtree Corners, GA. 1970s and 1980s homes, mid-century ranches, cabinet refinishing. Free estimates.",
     answer:

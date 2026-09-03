@@ -7,7 +7,7 @@ export const northFulton: City[] = [
     county: "Fulton County",
     region: "north-metro",
     driveTime: "About 25 minutes from our Cumming shop",
-    title: "Painter in Milton, GA | Pro Araiza",
+    title: "Painter in Milton, GA",
     description:
       "Estate and equestrian-property painting in Milton, GA. Exterior repaints, cedar and stone elevations, interior and cabinet work. Fully insured. Free estimates.",
     answer:
@@ -62,7 +62,7 @@ export const northFulton: City[] = [
     county: "Fulton County",
     region: "north-metro",
     driveTime: "About 30 minutes from our Cumming shop",
-    title: "Painter in Johns Creek, GA | Pro Araiza",
+    title: "Painter in Johns Creek, GA",
     description:
       "Interior, exterior, and cabinet painting in Johns Creek, GA. Brick-and-siding homes, tall great rooms, HOA color approvals. Fully insured. Free estimates.",
     answer:
@@ -118,7 +118,7 @@ export const northFulton: City[] = [
     county: "Fulton County",
     region: "north-metro",
     driveTime: "About 30 minutes from our Cumming shop",
-    title: "Painter in Roswell, GA | Pro Araiza",
+    title: "Painter in Roswell, GA",
     description:
       "Historic and modern home painting in Roswell, GA. Wood siding restoration, interior repaints, cabinet refinishing. Fully insured, 10 years local. Free estimates.",
     answer:

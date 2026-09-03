@@ -7,7 +7,7 @@ export const outer: City[] = [
     county: "Dawson County",
     region: "north-metro",
     driveTime: "About 25 minutes from our Cumming shop",
-    title: "Painter in Dawsonville, GA | Pro Araiza",
+    title: "Painter in Dawsonville, GA",
     description:
       "Interior, exterior, and cabinet painting in Dawsonville, GA. Mountain-area homes, cabins, larger lots, deck staining. Fully insured. Free estimates.",
     answer:
@@ -61,7 +61,7 @@ export const outer: City[] = [
     county: "Cobb County",
     region: "west-metro",
     driveTime: "About 55 minutes from our Cumming shop",
-    title: "Painter in Acworth, GA | Pro Araiza",
+    title: "Painter in Acworth, GA",
     description:
       "Interior, exterior, and cabinet painting in Acworth, GA. Lake Allatoona homes, 1990s subdivisions, decks and docks. Fully insured. Free written estimates.",
     answer:

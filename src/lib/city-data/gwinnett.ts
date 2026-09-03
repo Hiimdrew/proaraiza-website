@@ -7,7 +7,7 @@ export const gwinnett: City[] = [
     county: "Gwinnett County",
     region: "north-metro",
     driveTime: "About 25 minutes from our Cumming shop",
-    title: "Painter in Suwanee, GA | Pro Araiza",
+    title: "Painter in Suwanee, GA",
     description:
       "Interior, exterior, and cabinet painting in Suwanee, GA. Craftsman and traditional homes, HOA approvals, two-story great rooms. Fully insured. Free estimates.",
     answer:
@@ -63,7 +63,7 @@ export const gwinnett: City[] = [
     county: "Gwinnett County",
     region: "north-metro",
     driveTime: "About 35 minutes from our Cumming shop",
-    title: "Painter in Duluth, GA | Pro Araiza",
+    title: "Painter in Duluth, GA",
     description:
       "Painting contractor serving Duluth, GA. Interior and exterior repaints, cabinet refinishing, drywall repair. Fully insured, 10 years local. Free estimates.",
     answer:
@@ -119,7 +119,7 @@ export const gwinnett: City[] = [
     county: "Gwinnett and Hall Counties",
     region: "north-metro",
     driveTime: "About 25 minutes from our Cumming shop",
-    title: "Painter in Buford, GA | Pro Araiza",
+    title: "Painter in Buford, GA",
     description:
       "Interior, exterior, and cabinet painting in Buford, GA. Lake Lanier homes, new construction, decks and docks. Fully insured. Free written estimates.",
     answer:

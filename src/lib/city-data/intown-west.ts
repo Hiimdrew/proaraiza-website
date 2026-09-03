@@ -7,7 +7,7 @@ export const intownWest: City[] = [
     county: "Fulton County",
     region: "north-metro",
     driveTime: "About 45 minutes from our Cumming shop",
-    title: "Painter in Sandy Springs, GA | Pro Araiza",
+    title: "Painter in Sandy Springs, GA",
     description:
       "Interior, exterior, and cabinet painting in Sandy Springs, GA. Mid-century ranches, 1960s to 1980s homes, painted brick, cabinet refinishing. Free estimates.",
     answer:
@@ -62,7 +62,7 @@ export const intownWest: City[] = [
     county: "DeKalb County",
     region: "north-metro",
     driveTime: "About 45 minutes from our Cumming shop",
-    title: "Painter in Dunwoody, GA | Pro Araiza",
+    title: "Painter in Dunwoody, GA",
     description:
       "Interior, exterior, and cabinet painting in Dunwoody, GA. 1970s and 1980s homes, trim conversions, painted brick, cabinet refinishing. Free estimates.",
     answer:
@@ -117,7 +117,7 @@ export const intownWest: City[] = [
     county: "Cobb County",
     region: "west-metro",
     driveTime: "About 50 minutes from our Cumming shop",
-    title: "Painter in Kennesaw, GA | Pro Araiza",
+    title: "Painter in Kennesaw, GA",
     description:
       "Interior, exterior, and cabinet painting in Kennesaw, GA. 1990s and 2000s subdivisions, decks, cabinet refinishing. Fully insured. Free written estimates.",
     answer:

@@ -7,7 +7,7 @@ export const forsythNorthFulton: City[] = [
     county: "Forsyth County",
     region: "north-metro",
     driveTime: "Home base. We are based in Cumming.",
-    title: "Painter in Cumming, GA | Pro Araiza",
+    title: "Painter in Cumming, GA",
     description:
       "Cumming's locally owned painting and remodeling company. Interior, exterior, cabinets, drywall. Serving Forsyth County for 10 years. Free written estimates.",
     answer:
@@ -64,7 +64,7 @@ export const forsythNorthFulton: City[] = [
     county: "Fulton County",
     region: "north-metro",
     driveTime: "About 20 minutes from our Cumming shop",
-    title: "Painter in Alpharetta, GA | Pro Araiza",
+    title: "Painter in Alpharetta, GA",
     description:
       "Interior, exterior, and cabinet painting in Alpharetta, GA. Locally owned, fully insured, 10 years in North Fulton. Free written estimates, seven days a week.",
     answer:
