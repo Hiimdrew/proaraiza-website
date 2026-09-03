@@ -63,7 +63,7 @@ interface GradientTextProps {
 
 export function GradientText({ children, className = "" }: GradientTextProps) {
   return (
-    <span className={`bg-gradient-to-r from-brand-gold via-brand-copper to-brand-gold bg-[length:200%_auto] animate-shimmer bg-clip-text text-transparent ${className}`}>
+    <span className={`text-brand-gold ${className}`}>
       {children}
     </span>
   );

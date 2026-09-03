@@ -6,7 +6,7 @@ import CTABanner from "@/components/CTABanner";
 export const metadata: Metadata = {
   title: "About Joaquin Araiza | Owner & Craftsman of Pro Araiza",
   description:
-    "Meet Joaquin Araiza — the owner and craftsman behind Pro Araiza Remodeling & Painting. 10 years, 250+ projects, North Atlanta homes. Punctual, clean, and proud of every brushstroke.",
+    "Meet Joaquin Araiza, the owner and craftsman behind Pro Araiza Remodeling & Painting. 10 years, 250+ projects, North Atlanta homes. Punctual, clean, and proud of every brushstroke.",
 };
 
 const quickFacts = [
@@ -54,7 +54,7 @@ export default function AboutPage() {
       <section className="relative bg-brand-black">
         <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 sm:py-24 lg:grid-cols-2 lg:gap-16 lg:px-8 lg:py-32">
           <div className="flex flex-col justify-center">
-            <span className="inline-block self-start rounded-full border border-brand-gold/30 bg-brand-gold/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-brand-gold backdrop-blur-sm">
+            <span className="inline-block border-l-2 border-brand-gold pl-3 text-[15px] font-semibold uppercase tracking-[0.14em] text-brand-gold">
               Meet the Owner
             </span>
             <h1 className="mt-6 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
@@ -143,7 +143,7 @@ export default function AboutPage() {
               it&apos;s how I take care of my family. Thank you for considering us
               for your home.
             </p>
-            <p className="font-semibold text-brand-black">— Joaquin</p>
+            <p className="font-semibold text-brand-black">,  Joaquin</p>
           </div>
         </div>
       </section>

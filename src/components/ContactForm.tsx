@@ -74,7 +74,7 @@ export default function ContactForm() {
         setStatus("sent");
         // GA4 conversion. Fires only after the server accepts, so failed and
         // rate-limited submits never count. Honeypot hits get a fake 200 by
-        // design and are indistinguishable here — fine, since a bot that
+        // design and are indistinguishable here: fine, since a bot that
         // trips the honeypot isn't running gtag either.
         window.gtag?.("event", "generate_lead", {
           service: String(data.service ?? ""),

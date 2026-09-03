@@ -36,11 +36,11 @@ const offerings = [
 const reasons = [
   {
     title: "Schedule around your business, not ours",
-    body: "Nights, weekends, off-hours, holidays — we plan around when your business is closed so you never lose a minute of revenue.",
+    body: "Nights, weekends, off-hours, holidays. We plan around when your business is closed so you never lose a minute of revenue.",
   },
   {
     title: "Brand-aware color and finish",
-    body: "We don't just paint walls — we read your space. Color decisions and sheen selection that protect your brand and elevate your customer experience.",
+    body: "We don't just paint walls. We read your space. Color decisions and sheen selection that protect your brand and elevate your customer experience.",
   },
   {
     title: "Commercial-grade products",
@@ -55,7 +55,7 @@ const reasons = [
 const faqs = [
   {
     q: "Do you offer after-hours and weekend painting for commercial spaces?",
-    a: "Yes. Most of our commercial work happens nights and weekends so your business never has to close. We coordinate with your operations manager or property manager to find the right window — and we stick to it.",
+    a: "Yes. Most of our commercial work happens nights and weekends so your business never has to close. We coordinate with your operations manager or property manager to find the right window, and we stick to it.",
   },
   {
     q: "What products do you use for commercial environments?",
@@ -67,7 +67,7 @@ const faqs = [
   },
   {
     q: "How quickly can you start a commercial project?",
-    a: "Most small commercial projects can start within 1-2 weeks of contract. Larger multi-space projects we typically schedule 2-4 weeks out. For emergencies — water damage, pre-listing prep, last-minute brand updates — we make every effort to be there sooner.",
+    a: "Most small commercial projects can start within 1-2 weeks of contract. Larger multi-space projects we typically schedule 2-4 weeks out. For emergencies, water damage, pre-listing prep, last-minute brand updates. We make every effort to be there sooner.",
   },
   {
     q: "Can you match our brand colors exactly?",
@@ -105,7 +105,7 @@ export default function CommercialPage() {
         </div>
         <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
           <div className="max-w-2xl">
-            <span className="inline-block rounded-full border border-brand-gold/30 bg-brand-gold/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-brand-gold backdrop-blur-sm">
+            <span className="inline-block border-l-2 border-brand-gold pl-3 text-[15px] font-semibold uppercase tracking-[0.14em] text-brand-gold">
               Commercial &amp; Small Business
             </span>
             <h1 className="mt-6 text-4xl font-bold tracking-tight text-white sm:text-5xl">

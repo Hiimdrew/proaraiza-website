@@ -87,7 +87,7 @@ export async function POST(request: NextRequest) {
     return Response.json({ ok: false, error: "Invalid request." }, { status: 400 });
   }
 
-  // 1) Honeypot — a hidden field real users never see. If filled, it's a bot.
+  // 1) Honeypot: a hidden field real users never see. If filled, it's a bot.
   // Return a fake success so the bot doesn't learn it was caught.
   if (str(payload.company)) {
     return Response.json({ ok: true });

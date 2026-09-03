@@ -9,7 +9,7 @@ import Providers from "@/components/Providers";
 import { Analytics } from "@vercel/analytics/next";
 import Script from "next/script";
 
-// GA4 measurement ID for Joaquin's "Pro Araiza" property. Public by design —
+// GA4 measurement ID for Joaquin's "Pro Araiza" property. Public by design.
 // it ships in the client bundle either way, so no env var for it.
 const GA_ID = "G-KG1YRW4803";
 

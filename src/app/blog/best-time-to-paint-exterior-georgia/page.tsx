@@ -23,7 +23,7 @@ const seasons = [
     rating: "Fair",
     ratingColor: "text-yellow-600",
     description:
-      "Georgia summers are hot and humid — not ideal for exterior painting. High humidity can cause paint to dry too slowly and trap moisture. Extreme heat can cause paint to dry too fast, leading to brush marks and poor adhesion. Early morning work is possible, but midday heat limits productivity.",
+      "Georgia summers are hot and humid, not ideal for exterior painting. High humidity can cause paint to dry too slowly and trap moisture. Extreme heat can cause paint to dry too fast, leading to brush marks and poor adhesion. Early morning work is possible, but midday heat limits productivity.",
     pros: ["Predictable weather patterns", "Longest daylight hours"],
     cons: ["Extreme heat (90°F+) causes fast drying issues", "High humidity slows curing", "Afternoon thunderstorms", "Heat makes ladder work unsafe"],
   },
@@ -34,7 +34,7 @@ const seasons = [
     description:
       "Fall is the gold standard for exterior painting in North Georgia. Temperatures drop into the ideal 50-75°F range, humidity decreases significantly, and rain becomes less frequent. September through mid-November provides the most consistent painting conditions of the year.",
     pros: ["Ideal temperature range", "Low humidity", "Less rain", "Paint cures perfectly", "Most consistent weather"],
-    cons: ["High demand — book early", "Daylight hours begin to shorten in November"],
+    cons: ["High demand, book early", "Daylight hours begin to shorten in November"],
   },
   {
     name: "Winter (December - February)",
@@ -42,7 +42,7 @@ const seasons = [
     ratingColor: "text-red-600",
     description:
       "Georgia winters are mild compared to northern states, but temperatures can still drop below the 50°F minimum required for most exterior paints. Some days are warm enough to paint, but short daylight hours and unpredictable cold snaps make scheduling difficult.",
-    pros: ["Lowest contractor demand — easier scheduling", "Some warm days (55°F+) are usable"],
+    pros: ["Lowest contractor demand, easier scheduling", "Some warm days (55°F+) are usable"],
     cons: ["Temperatures often below paint minimum", "Short daylight hours", "Morning dew/frost delays start time", "Inconsistent day-to-day conditions"],
   },
 ];
@@ -174,7 +174,7 @@ export default function BestTimePaintPage() {
                 "Late spring (April-May) is the second-best window",
                 "Avoid mid-summer heat and humidity when possible",
                 "Temperature should be 50-85°F during application and for 24 hours after",
-                "Book fall appointments early — it is peak season for good reason",
+                "Book fall appointments early, it is peak season for good reason",
               ].map((point) => (
                 <li key={point} className="flex items-start gap-2 text-sm text-brand-text">
                   <svg className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand-gold" fill="currentColor" viewBox="0 0 20 20">

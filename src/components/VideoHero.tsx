@@ -45,7 +45,7 @@ export default function VideoHero({ videoSrc, posterSrc }: VideoHeroProps) {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <span className="inline-block rounded-full border border-brand-gold/30 bg-brand-gold/10 px-5 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-brand-gold backdrop-blur-sm">
+              <span className="inline-block border-l-2 border-brand-gold pl-3 text-[15px] font-semibold uppercase tracking-[0.14em] text-brand-gold">
                 {t.hero.badge}
               </span>
             </motion.div>
@@ -98,7 +98,7 @@ export default function VideoHero({ videoSrc, posterSrc }: VideoHeroProps) {
             >
               <Link
                 href="/contact"
-                className="group relative overflow-hidden rounded-lg bg-brand-gold px-10 py-4 text-center text-sm font-bold uppercase tracking-wider text-brand-black transition-all duration-300 hover:shadow-2xl hover:shadow-brand-gold/30 animate-pulse-glow"
+                className="group relative overflow-hidden rounded-lg bg-brand-gold px-10 py-4 text-center text-sm font-bold uppercase tracking-wider text-brand-black transition-all duration-300 hover:shadow-2xl hover:shadow-brand-gold/30"
               >
                 <span className="relative z-10">{t.hero.cta}</span>
                 <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-brand-copper to-brand-gold transition-transform duration-500 group-hover:translate-x-0" />
@@ -108,7 +108,7 @@ export default function VideoHero({ videoSrc, posterSrc }: VideoHeroProps) {
               </Link>
               <a
                 href="tel:8434152437"
-                className="group rounded-lg border-2 border-white/20 px-10 py-4 text-center text-sm font-bold uppercase tracking-wider text-white backdrop-blur-sm transition-all duration-300 hover:border-brand-gold hover:bg-brand-gold/10 hover:text-brand-gold"
+                className="group rounded-lg border-2 border-white/20 px-10 py-4 text-center text-sm font-bold uppercase tracking-wider text-white transition-all duration-300 hover:border-brand-gold hover:bg-brand-gold/10 hover:text-brand-gold"
               >
                 <span className="flex items-center justify-center gap-3">
                   <svg className="h-4 w-4 transition-transform group-hover:rotate-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

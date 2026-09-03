@@ -296,7 +296,7 @@ export default function HomePage() {
         </svg>
       </div>
 
-      {/* Mid-page CTA — after Recent Projects */}
+      {/* Mid-page CTA: after Recent Projects */}
       <InlineCTA
         variant="light"
         headline="Like what you see? Let&apos;s talk about your home."
@@ -326,11 +326,11 @@ export default function HomePage() {
 
               <div className="mt-12 space-y-6">
                 {[
-                  { text: "Owner-led — Joaquin Araiza is on every job, no subcontractors", icon: "home" },
+                  { text: "Owner-led. Joaquin Araiza is on every job, and we do not subcontract", icon: "home" },
                   { text: "10 years in business · 250+ projects across North Atlanta", icon: "clock" },
                   { text: "Sherwin-Williams & Benjamin Moore premium paint only", icon: "check" },
                   { text: "Fully insured · 2-year workmanship warranty on every project", icon: "shield" },
-                  { text: "Honest pricing — 30-50% deposit, balance only when you're 100% satisfied", icon: "dollar" },
+                  { text: "Honest pricing: 30-50% deposit, balance only when you're 100% satisfied", icon: "dollar" },
                   { text: "Available 7 days a week, 7 AM to 7 PM", icon: "calendar" },
                 ].map((point, i) => (
                   <motion.div
@@ -534,7 +534,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Mid-page CTA — after Testimonials */}
+      {/* Mid-page CTA: after Testimonials */}
       <InlineCTA
         variant="dark"
         headline="Want a finish like this in your home?"

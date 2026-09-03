@@ -75,7 +75,7 @@ export default function PrivacyPolicyPage() {
       <section className="bg-brand-black">
         <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
           <div className="max-w-3xl">
-            <span className="inline-block rounded-full border border-brand-gold/30 bg-brand-gold/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-brand-gold backdrop-blur-sm">
+            <span className="inline-block border-l-2 border-brand-gold pl-3 text-[15px] font-semibold uppercase tracking-[0.14em] text-brand-gold">
               Privacy Policy
             </span>
             <h1 className="mt-6 text-4xl font-bold tracking-tight text-white sm:text-5xl">

@@ -14,7 +14,7 @@ interface LazyVideoProps {
  * Mobile-safe autoplay wrapper.
  *
  * iOS Safari throttles multi-video autoplay even when muted + playsInline are
- * set — secondary videos often pause and show a play button. This component
+ * set: secondary videos often pause and show a play button. This component
  * uses IntersectionObserver to start playback only when the video enters the
  * viewport and pause it when it leaves. preload="metadata" keeps initial
  * bandwidth low so multiple videos on a page don't compete for the network.
@@ -36,9 +36,9 @@ export default function LazyVideo({
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             // play() returns a promise; iOS may reject if the user hasn't
-            // interacted yet. Swallow the rejection — the poster shows instead.
+            // interacted yet. Swallow the rejection: the poster shows instead.
             video.play().catch(() => {
-              /* autoplay blocked — poster is the fallback */
+              /* autoplay blocked, poster is the fallback */
             });
           } else {
             video.pause();

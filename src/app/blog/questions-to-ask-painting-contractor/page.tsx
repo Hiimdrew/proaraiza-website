@@ -19,12 +19,12 @@ const questions = [
     number: 2,
     title: "How long have you been in business?",
     body: "Experience matters in painting. A contractor who has been in business for 5+ years has survived because their work quality and customer service earned repeat business and referrals. Newer contractors can do good work, but longevity is a strong signal of reliability.",
-    tip: "Check their online presence — Google Business Profile, Nextdoor, social media. Consistent activity over years is harder to fake than a few recent reviews.",
+    tip: "Check their online presence, Google Business Profile, Nextdoor, social media. Consistent activity over years is harder to fake than a few recent reviews.",
   },
   {
     number: 3,
     title: "Do you do the work yourselves or use subcontractors?",
-    body: "Some painting companies are actually brokers — they take your deposit and hand the job to whoever is available that week. You want to know exactly who will be in your home. The best companies use their own trained crews who work together regularly.",
+    body: "Some painting companies are actually brokers, they take your deposit and hand the job to whoever is available that week. You want to know exactly who will be in your home. The best companies use their own trained crews who work together regularly.",
     tip: "Ask who specifically will be painting your home and whether those same people will be there from start to finish.",
   },
   {
@@ -37,19 +37,19 @@ const questions = [
     number: 5,
     title: "What paint brands and products do you use?",
     body: "Professional painters typically use Sherwin-Williams or Benjamin Moore products. These brands offer better coverage, durability, and color accuracy than big-box store paints. Ask what specific product line they recommend for your project and why.",
-    tip: "Be cautious of contractors who want to use the cheapest paint available. The cost difference between a good paint and a great paint is minimal compared to the labor cost — but the longevity difference is years.",
+    tip: "Be cautious of contractors who want to use the cheapest paint available. The cost difference between a good paint and a great paint is minimal compared to the labor cost, but the longevity difference is years.",
   },
   {
     number: 6,
     title: "Can I see examples of your recent work?",
-    body: "Every professional painter should be able to show you photos of recent projects or provide references from recent customers. Look for clean lines, even coverage, and attention to detail areas like trim and edges. Even better — ask if you can drive by a recent exterior job.",
+    body: "Every professional painter should be able to show you photos of recent projects or provide references from recent customers. Look for clean lines, even coverage, and attention to detail areas like trim and edges. Even better, ask if you can drive by a recent exterior job.",
     tip: "Look for photos that show detail work, not just wide-angle room shots. Clean cut lines where walls meet ceilings and trim are the mark of a skilled painter.",
   },
   {
     number: 7,
-    title: "What does your estimate include — and what does it not include?",
+    title: "What does your estimate include, and what does it not include?",
     body: "A good estimate should be detailed and in writing. It should specify: the areas being painted, number of coats, paint brand and color, prep work included, timeline, payment schedule, and warranty. Ask what would cause the price to change after the job starts.",
-    tip: "Watch out for estimates that seem too low. If one bid is 40% below the others, that contractor is cutting corners somewhere — usually on prep work, paint quality, or number of coats.",
+    tip: "Watch out for estimates that seem too low. If one bid is 40% below the others, that contractor is cutting corners somewhere, usually on prep work, paint quality, or number of coats.",
   },
 ];
 
@@ -60,7 +60,7 @@ const faqs = [
   },
   {
     q: "What is the difference between a painting contractor and a handyman?",
-    a: "A painting contractor specializes in painting — they have dedicated equipment, trained crews, and deep expertise in surface preparation, product selection, and application techniques. A handyman offers general services and may paint occasionally, but typically lacks the specialized training, equipment, and insurance coverage that a dedicated painting contractor carries.",
+    a: "A painting contractor specializes in painting, they have dedicated equipment, trained crews, and deep expertise in surface preparation, product selection, and application techniques. A handyman offers general services and may paint occasionally, but typically lacks the specialized training, equipment, and insurance coverage that a dedicated painting contractor carries.",
   },
   {
     q: "How do I know if a painter did a good job?",
@@ -123,7 +123,7 @@ export default function HiringGuidePage() {
         <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
           <p className="text-brand-text leading-relaxed">
             Hiring a painting contractor is one of the most common home improvement
-            decisions — and one of the easiest to get wrong. The barrier to entry
+            decisions, and one of the easiest to get wrong. The barrier to entry
             is low, which means there are many operators with limited experience,
             inadequate insurance, or questionable business practices. These seven
             questions help you separate the professionals from the rest.

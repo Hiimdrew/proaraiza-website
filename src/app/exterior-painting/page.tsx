@@ -4,7 +4,7 @@ import Link from "next/link";
 import CTABanner from "@/components/CTABanner";
 
 export const metadata: Metadata = {
-  title: "Exterior Painting | North Atlanta — Cumming, Alpharetta, Marietta, Roswell",
+  title: "Exterior Painting | North Atlanta, Cumming, Alpharetta, Marietta, Roswell",
   description:
     "Owner-led exterior painting for North Atlanta homes. Hardie board, brick, stucco, wood, trim, and garage doors. Premium Sherwin-Williams & Benjamin Moore systems chosen for Georgia weather. 2-year warranty. Free estimates.",
 };
@@ -25,7 +25,7 @@ const process = [
     step: "1",
     title: "Inspection & Estimate",
     description:
-      "We inspect every surface of your exterior — siding, trim, soffits, and more. You get a detailed written estimate within 24 hours.",
+      "We inspect every surface of your exterior, siding, trim, soffits, and more. You get a detailed written estimate within 24 hours.",
   },
   {
     step: "2",
@@ -66,7 +66,7 @@ const faqs = [
   },
   {
     q: "Is it better to spray or roll exterior paint in humid climates?",
-    a: "We use a combination of both — spraying for broad surfaces and back-rolling to work paint into the texture of the siding. This gives you the speed of spraying with the adhesion benefits of rolling, which is especially important in Georgia's humid climate.",
+    a: "We use a combination of both, spraying for broad surfaces and back-rolling to work paint into the texture of the siding. This gives you the speed of spraying with the adhesion benefits of rolling, which is especially important in Georgia's humid climate.",
   },
 ];
 
@@ -101,7 +101,7 @@ export default function ExteriorPaintingPage() {
             <p className="mt-6 text-lg text-gray-300">
               Brick, Hardie plank, stucco, garage doors, and decorative trim.
               Premium Sherwin-Williams and Benjamin Moore systems chosen for
-              North Georgia weather — and applied so the finish lasts as long as
+              North Georgia weather, and applied so the finish lasts as long as
               the warranty says it will.
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">

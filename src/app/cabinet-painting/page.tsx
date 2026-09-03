@@ -6,7 +6,7 @@ import CTABanner from "@/components/CTABanner";
 export const metadata: Metadata = {
   title: "Cabinet Painting & Refinishing | North Atlanta Kitchen Transformations",
   description:
-    "Factory-quality sprayed cabinet refinishing for North Atlanta kitchens — Cumming, Alpharetta, Marietta, Roswell. Two-tone, color updates, hardware upgrades. Save 80% vs replacement. 2-year warranty.",
+    "Factory-quality sprayed cabinet refinishing for North Atlanta kitchens, Cumming, Alpharetta, Marietta, Roswell. Two-tone, color updates, hardware upgrades. Save 80% vs replacement. 2-year warranty.",
 };
 
 const process = [
@@ -86,7 +86,7 @@ export default function CabinetPaintingPage() {
             <p className="mt-6 text-lg text-gray-300">
               Factory-quality sprayed finishes. We strip your kitchen down to
               bare wood, mask off your countertops, and deliver a finish that
-              looks like it came from the cabinet factory — at a fraction of
+              looks like it came from the cabinet factory, at a fraction of
               replacement cost.
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -119,7 +119,7 @@ export default function CabinetPaintingPage() {
                 <p>
                   New kitchen cabinets can cost $15,000-$40,000 and take weeks to
                   install. Cabinet painting delivers a dramatic transformation at
-                  10-20% of that cost — usually in under a week.
+                  10-20% of that cost, usually in under a week.
                 </p>
                 <p>
                   If your cabinet boxes are solid and the layout works for you,
@@ -186,7 +186,7 @@ export default function CabinetPaintingPage() {
             Trending Cabinet Colors for 2026
           </h2>
           <p className="mt-4 max-w-2xl text-brand-text-light">
-            Two-tone kitchens are dominating North Atlanta — lighter uppers with a
+            Two-tone kitchens are dominating North Atlanta, lighter uppers with a
             darker or contrasting island. Here are the most requested colors.
           </p>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

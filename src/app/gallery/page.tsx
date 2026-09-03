@@ -22,7 +22,7 @@ const projects = [
     category: "Interior Painting",
     city: "Cumming, GA",
     image: "/images/projects/kitchen-gray-walls.jpg",
-    description: "Light neutral gray walls with matte finish — bright, clean, and a fresh dining backdrop.",
+    description: "Light neutral gray walls with matte finish, bright, clean, and a fresh dining backdrop.",
   },
   {
     title: "Premium Hallway with Wainscoting",
@@ -50,7 +50,7 @@ const projects = [
     category: "Exterior Painting",
     city: "Cumming, GA",
     image: "/images/projects/exterior-black-garage.jpg",
-    description: "Garage doors, decorative arches, gutters, and trim in premium satin black — bold contrast against the brick.",
+    description: "Garage doors, decorative arches, gutters, and trim in premium satin black, bold contrast against the brick.",
   },
   {
     title: "Stucco Exterior Repaint",
@@ -64,7 +64,7 @@ const projects = [
     category: "Deck Staining",
     city: "Marietta, GA",
     image: "/images/projects/deck-timber-frame.jpg",
-    description: "Premium semi-transparent stain on the entire deck — flooring, railings, and exposed ceiling trusses.",
+    description: "Premium semi-transparent stain on the entire deck, flooring, railings, and exposed ceiling trusses.",
   },
   {
     title: "Natural Wood Restoration",
@@ -97,7 +97,7 @@ export default function GalleryPage() {
             </h1>
             <p className="mt-4 text-lg text-gray-300">
               250+ painting and remodeling projects across North Atlanta.
-              Interiors, exteriors, cabinets, decks, and full renovations —
+              Interiors, exteriors, cabinets, decks, and full renovations , 
               every project led personally by Joaquin Araiza.
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">

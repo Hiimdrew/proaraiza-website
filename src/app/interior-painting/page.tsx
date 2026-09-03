@@ -4,7 +4,7 @@ import Link from "next/link";
 import CTABanner from "@/components/CTABanner";
 
 export const metadata: Metadata = {
-  title: "Interior Painting | North Atlanta — Cumming, Alpharetta, Marietta, Roswell",
+  title: "Interior Painting | North Atlanta, Cumming, Alpharetta, Marietta, Roswell",
   description:
     "Owner-led interior painting for North Atlanta homes. Whole-home repaints, accent walls, trim, ceilings. Sherwin-Williams & Benjamin Moore. 2-year warranty. Free estimates. Call (843) 415-2437.",
 };
@@ -43,7 +43,7 @@ const process = [
     step: "4",
     title: "Final Walkthrough",
     description:
-      "We walk the project with you room by room. Touch-ups, cleanup, and furniture moved back — we handle it all.",
+      "We walk the project with you room by room. Touch-ups, cleanup, and furniture moved back. We handle it all.",
   },
 ];
 

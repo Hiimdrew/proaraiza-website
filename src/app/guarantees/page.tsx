@@ -5,7 +5,7 @@ import CTABanner from "@/components/CTABanner";
 export const metadata: Metadata = {
   title: "Guarantees & Credentials | Pro Araiza Remodeling & Painting",
   description:
-    "Fully licensed and insured. 2-year workmanship warranty on every painting and remodeling project. Sherwin-Williams and Benjamin Moore premium paints. Honest payment terms — 30-50% deposit, balance on satisfaction.",
+    "Fully licensed and insured. 2-year workmanship warranty on every painting and remodeling project. Sherwin-Williams and Benjamin Moore premium paints. Honest payment terms, 30-50% deposit, balance on satisfaction.",
 };
 
 const credentials = [
@@ -28,10 +28,10 @@ const credentials = [
 ];
 
 const warrantyDetails = [
-  "All interior and exterior painting workmanship — covered for 2 years against peeling, blistering, and chipping caused by application defects.",
-  "Cabinet refinishing — covered for 2 years against finish failure, chipping, and adhesion issues.",
-  "Deck staining — covered for product-appropriate longevity (5-7 years for semi-transparent, 7-10 for solid stains) when our recommended maintenance schedule is followed.",
-  "Drywall and trim repair work — covered against re-cracking and seam failure for 2 years.",
+  "All interior and exterior painting workmanship, covered for 2 years against peeling, blistering, and chipping caused by application defects.",
+  "Cabinet refinishing, covered for 2 years against finish failure, chipping, and adhesion issues.",
+  "Deck staining, covered for product-appropriate longevity (5-7 years for semi-transparent, 7-10 for solid stains) when our recommended maintenance schedule is followed.",
+  "Drywall and trim repair work, covered against re-cracking and seam failure for 2 years.",
 ];
 
 const exclusions = [
@@ -61,11 +61,11 @@ const paymentTerms = [
 const materials = [
   {
     brand: "Sherwin-Williams",
-    note: "Emerald, ProClassic, ProMar 200, SuperPaint, and Cabinet Coat — chosen based on substrate and environment.",
+    note: "Emerald, ProClassic, ProMar 200, SuperPaint, and Cabinet Coat. We choose the line based on the substrate and the environment.",
   },
   {
     brand: "Benjamin Moore",
-    note: "Advance, Aura, Regal Select, and Ultra Spec Commercial — premium lines for high-touch areas, cabinets, and commercial work.",
+    note: "Advance, Aura, Regal Select, and Ultra Spec Commercial. These are premium lines for high-touch areas, cabinets, and commercial work.",
   },
   {
     brand: "Specialty Coatings",
@@ -80,7 +80,7 @@ export default function GuaranteesPage() {
       <section className="bg-brand-black">
         <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
           <div className="max-w-3xl">
-            <span className="inline-block rounded-full border border-brand-gold/30 bg-brand-gold/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-brand-gold backdrop-blur-sm">
+            <span className="inline-block border-l-2 border-brand-gold pl-3 text-[15px] font-semibold uppercase tracking-[0.14em] text-brand-gold">
               Guarantees &amp; Credentials
             </span>
             <h1 className="mt-6 text-4xl font-bold tracking-tight text-white sm:text-5xl">
@@ -89,7 +89,7 @@ export default function GuaranteesPage() {
             <p className="mt-6 text-lg text-gray-300">
               Every promise on this site is a promise we have written down,
               insured, and warranty-backed. Here is exactly what you are getting
-              when you hire Pro Araiza — in plain language, with the
+              when you hire Pro Araiza, in plain language, with the
               fine print included.
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -121,8 +121,8 @@ export default function GuaranteesPage() {
               </h2>
               <p className="mt-6 text-brand-text leading-relaxed">
                 We stand behind every project for two full years. If our
-                workmanship fails — paint peels, cabinets chip, drywall seams
-                crack — we come back and fix it at no cost.
+                workmanship fails, paint peels, cabinets chip, drywall seams
+                crack. We come back and fix it at no cost.
               </p>
             </div>
             <div className="lg:col-span-2">
@@ -237,18 +237,18 @@ export default function GuaranteesPage() {
             </h2>
             <p className="mt-6 text-brand-text leading-relaxed">
               It&apos;s easy to put a slogan on a website. Here is what we actually
-              do on every single project — without exception.
+              do on every single project, without exception.
             </p>
           </div>
           <ul className="mt-10 grid gap-4 sm:grid-cols-2">
             {[
               "Drop cloths on every floor surface before we open a paint can.",
               "Plastic and tape on every cabinet, countertop, and adjacent surface.",
-              "All hardware removed and labeled — never painted around.",
+              "All hardware removed and labeled, never painted around.",
               "Daily site cleanup. We sweep, vacuum, and dispose of trash every evening.",
               "Sanding and dust controlled with shop vacuums and air filtration.",
               "End-of-day walkthroughs so you always know what tomorrow looks like.",
-              "Final satisfaction walkthrough — we don't ask for final payment until you sign off.",
+              "Final satisfaction walkthrough. We don't ask for final payment until you sign off.",
               "Touch-up paint left for you in a labeled container for future repairs.",
             ].map((item) => (
               <li key={item} className="flex gap-3 rounded-lg border border-gray-200 bg-white p-4 text-sm text-brand-text">

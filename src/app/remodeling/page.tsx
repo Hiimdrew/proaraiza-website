@@ -4,16 +4,16 @@ import Link from "next/link";
 import CTABanner from "@/components/CTABanner";
 
 export const metadata: Metadata = {
-  title: "Remodeling & Drywall | North Atlanta — Drywall, Trim, Light Renovations",
+  title: "Remodeling & Drywall | North Atlanta, Drywall, Trim, Light Renovations",
   description:
-    "Drywall repair, trim installation, hardwood refinishing, carpentry, and light remodeling across North Atlanta. The repairs and upgrades that make a paint job look perfect — done by the same craftsman team.",
+    "Drywall repair, trim installation, hardwood refinishing, carpentry, and light remodeling across North Atlanta. The repairs and upgrades that make a paint job look perfect, done by the same craftsman team.",
 };
 
 const serviceCategories = [
   {
     title: "Drywall Repair & Installation",
     image: "/images/projects/bare-wood-sanded.jpg",
-    alt: "Flawlessly sanded bare wood surface — the kind of prep that makes a finish last",
+    alt: "Flawlessly sanded bare wood surface, the kind of prep that makes a finish last",
     items: [
       "Hole and crack repair",
       "Water damage restoration",

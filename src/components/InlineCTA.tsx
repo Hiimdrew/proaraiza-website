@@ -11,13 +11,13 @@ interface InlineCTAProps {
   primaryLabel?: string;
   /** Where the primary button links. Defaults to /contact. */
   primaryHref?: string;
-  /** Variant — light or dark background. */
+  /** Variant, light or dark background. */
   variant?: "dark" | "light";
 }
 
 /**
  * Slim mid-page CTA strip designed for inline use between content sections.
- * Less heavy than CTABanner so it doesn't signal "page is ending" — instead
+ * Less heavy than CTABanner so it doesn't signal "page is ending": instead
  * acts as a friction-breaker for users mid-scroll who are warming up.
  *
  * Use this AFTER trust moments (project showcase, testimonials, FAQ, gallery)

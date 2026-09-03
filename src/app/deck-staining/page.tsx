@@ -40,7 +40,7 @@ const process = [
 const faqs = [
   {
     q: "How much does deck staining cost in North Atlanta?",
-    a: "Most residential decks in Forsyth, Fulton, and Cobb counties run $1,200-$3,500 for a complete stain or restain. Larger covered porches and decks with extensive railings, balusters, or exposed ceiling trusses run higher — usually $3,500-$6,500. We give every homeowner a free written estimate before any work begins.",
+    a: "Most residential decks in Forsyth, Fulton, and Cobb counties run $1,200-$3,500 for a complete stain or restain. Larger covered porches and decks with extensive railings, balusters, or exposed ceiling trusses run higher, usually $3,500-$6,500. We give every homeowner a free written estimate before any work begins.",
   },
   {
     q: "How long does deck staining last in Georgia's climate?",
@@ -48,15 +48,15 @@ const faqs = [
   },
   {
     q: "Should I choose solid stain or semi-transparent?",
-    a: "Semi-transparent shows off the natural wood grain and ages gracefully — it's our recommendation for cedar, redwood, and pressure-treated pine in good condition. Solid stain hides imperfections and lasts longer but covers the grain. We'll walk you through the trade-offs based on the age and condition of your wood.",
+    a: "Semi-transparent shows off the natural wood grain and ages gracefully. It's our recommendation for cedar, redwood, and pressure-treated pine in good condition. Solid stain hides imperfections and lasts longer but covers the grain. We'll walk you through the trade-offs based on the age and condition of your wood.",
   },
   {
     q: "Do you stain timber-frame ceilings and exposed trusses?",
-    a: "Yes — that's some of our most rewarding work. Premium covered decks and outdoor living spaces with exposed trusses or timber-frame ceilings need careful prep at height and proper product selection so the finish stays uniform on overhead surfaces. We've done these projects throughout North Atlanta.",
+    a: "Yes. That's some of our most rewarding work. Premium covered decks and outdoor living spaces with exposed trusses or timber-frame ceilings need careful prep at height and proper product selection so the finish stays uniform on overhead surfaces. We've done these projects throughout North Atlanta.",
   },
   {
-    q: "What about pressure washing — can't I just power-wash and re-stain?",
-    a: "Pressure washing alone is rarely the answer. Aggressive pressure can damage the wood fibers and create a 'fuzzy' surface that takes stain poorly. We use controlled low-pressure washing combined with proper sanding and brightening — the way to get a finish that actually lasts.",
+    q: "What about pressure washing, can't I just power-wash and re-stain?",
+    a: "Pressure washing alone is rarely the answer. Aggressive pressure can damage the wood fibers and create a 'fuzzy' surface that takes stain poorly. We use controlled low-pressure washing combined with proper sanding and brightening, the way to get a finish that actually lasts.",
   },
 ];
 
@@ -90,7 +90,7 @@ export default function DeckStainingPage() {
         </div>
         <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
           <div className="max-w-2xl">
-            <span className="inline-block rounded-full border border-brand-gold/30 bg-brand-gold/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-brand-gold backdrop-blur-sm">
+            <span className="inline-block border-l-2 border-brand-gold pl-3 text-[15px] font-semibold uppercase tracking-[0.14em] text-brand-gold">
               Premium Outdoor Restoration
             </span>
             <h1 className="mt-6 text-4xl font-bold tracking-tight text-white sm:text-5xl">
@@ -99,7 +99,7 @@ export default function DeckStainingPage() {
             <p className="mt-6 text-lg text-gray-300">
               Premium semi-transparent stains that bring out the natural grain of
               your wood and protect it from Georgia humidity, UV, and rain for 5
-              to 7 years. We strip, sand, and seal every plank — railings and
+              to 7 years. We strip, sand, and seal every plank, railings and
               exposed ceiling trusses included.
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -130,7 +130,7 @@ export default function DeckStainingPage() {
               </h2>
               <div className="mt-6 space-y-4 text-brand-text leading-relaxed">
                 <p>
-                  Most failed deck stains aren&apos;t failures of the stain — they&apos;re
+                  Most failed deck stains aren&apos;t failures of the stain. They&apos;re
                   failures of the prep. Stain on top of a dirty, fuzzy, or
                   poorly sanded deck will peel within a year no matter what
                   brand it is.
@@ -144,7 +144,7 @@ export default function DeckStainingPage() {
                 </p>
                 <p>
                   And for premium covered decks with exposed timber frames or
-                  ceiling trusses — we stain those too. Same standards, just
+                  ceiling trusses. We stain those too. Same standards, just
                   more masking and scaffolding.
                 </p>
               </div>
@@ -199,7 +199,7 @@ export default function DeckStainingPage() {
               <p className="mt-4 text-sm text-brand-text-light leading-relaxed">
                 Lets the natural wood grain show through. Best for cedar,
                 redwood, and well-maintained pressure-treated pine. Ages
-                gracefully — touch-ups blend seamlessly. The premium look for
+                gracefully, touch-ups blend seamlessly. The premium look for
                 premium decks.
               </p>
             </div>

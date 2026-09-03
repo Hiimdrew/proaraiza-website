@@ -1,16 +1,17 @@
 import type { MetadataRoute } from "next";
+import { CITIES } from "@/lib/cities";
 
 const BASE = "https://www.proaraizapainting.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
-  // Homepage — top priority.
+  // Homepage: top priority.
   const home = [
     { url: BASE, lastModified: now, changeFrequency: "weekly" as const, priority: 1.0 },
   ];
 
-  // Service pages — core offering, high priority.
+  // Service pages: core offering, high priority.
   const services = [
     "/services",
     "/interior-painting",
@@ -26,19 +27,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
-  // City pages — the local-SEO engine. High priority, these drive "painter in [city]" traffic.
-  const cities = [
-    "/painting-cumming-ga",
-    "/painting-alpharetta-ga",
-    "/painting-marietta-ga",
-    "/painting-roswell-ga",
-    "/painting-buford-ga",
-    "/painting-woodstock-ga",
-    "/painting-duluth-ga",
-    "/painting-gainesville-ga",
-    "/painting-dacula-ga",
-  ].map((path) => ({
-    url: `${BASE}${path}`,
+  // City pages: the local-SEO engine, generated from the city data so the
+  // sitemap can never drift out of sync with the routes that actually exist.
+  const cities = CITIES.map((c) => ({
+    url: `${BASE}/painting-${c.slug}-ga`,
     lastModified: now,
     changeFrequency: "monthly" as const,
     priority: 0.9,
@@ -46,6 +38,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Trust + conversion pages.
   const trust = [
+    "/service-areas",
     "/about",
     "/guarantees",
     "/gallery",
@@ -57,7 +50,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  // Blog — index + posts.
+  // Blog: index + posts.
   const blog = [
     "/blog",
     "/blog/best-time-to-paint-exterior-georgia",

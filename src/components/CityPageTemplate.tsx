@@ -4,167 +4,288 @@ import Image from "next/image";
 import Link from "next/link";
 import CTABanner from "./CTABanner";
 import InlineCTA from "./InlineCTA";
-import { useLanguage } from "@/i18n/LanguageContext";
+import type { City } from "@/lib/cities";
+import { nearbyCities } from "@/lib/cities";
 
-interface CityPageProps {
-  city: string;
-  intro: string;
-  introEs?: string;
-  neighborhoods: string[];
-  faqs: { q: string; a: string; qEs?: string; aEs?: string }[];
-  image?: { src: string; alt: string };
+const PHONE_DISPLAY = "(843) 415-2437";
+const PHONE_HREF = "tel:8434152437";
+const BASE = "https://www.proaraizapainting.com";
+
+function Eyebrow({ children }: { children: React.ReactNode }) {
+  // Ruled eyebrow, not a pill badge. 15px / 600 is the legibility floor
+  // for tracked uppercase labels.
+  return (
+    <span className="inline-block border-l-2 border-brand-gold pl-3 text-[15px] font-semibold uppercase tracking-[0.14em] text-brand-gold">
+      {children}
+    </span>
+  );
 }
 
-export default function CityPageTemplate({ city, intro, introEs, neighborhoods, faqs, image }: CityPageProps) {
-  const { t, locale } = useLanguage();
-
-  const displayIntro = locale === "es" && introEs ? introEs : intro;
+export default function CityPageTemplate({ city }: { city: City }) {
+  const nearby = nearbyCities(city);
+  const url = `${BASE}/painting-${city.slug}-ga`;
 
   const services = [
-    { name: locale === "es" ? t.nav.interiorPainting : "Interior Painting", href: "/interior-painting", description: t.city.interiorDesc },
-    { name: locale === "es" ? t.nav.exteriorPainting : "Exterior Painting", href: "/exterior-painting", description: t.city.exteriorDesc },
-    { name: locale === "es" ? t.nav.cabinetPainting : "Cabinet Painting & Refinishing", href: "/cabinet-painting", description: t.city.cabinetDesc },
-    { name: locale === "es" ? t.nav.remodeling : "Remodeling & Drywall", href: "/remodeling", description: t.city.remodelingDesc },
+    { name: "Interior Painting", href: "/interior-painting" },
+    { name: "Exterior Painting", href: "/exterior-painting" },
+    { name: "Cabinet Painting & Refinishing", href: "/cabinet-painting" },
+    { name: "Deck Staining", href: "/deck-staining" },
+    { name: "Remodeling & Drywall", href: "/remodeling" },
+    { name: "Commercial", href: "/commercial" },
   ];
 
-  const faqSchema = {
+  // Answer-engine structured data. The graph ties the service, the area, the
+  // FAQ answers and the breadcrumb together so an engine can resolve
+  // "painter in {city}" to one business with one set of verifiable facts.
+  const schema = {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqs.map((faq) => ({
-      "@type": "Question",
-      name: faq.q,
-      acceptedAnswer: { "@type": "Answer", text: faq.a },
-    })),
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": `${url}#service`,
+        name: `House Painting in ${city.name}, GA`,
+        serviceType: "Painting Contractor",
+        description: city.answer,
+        provider: {
+          "@type": "LocalBusiness",
+          name: "Pro Araiza Remodeling & Painting",
+          telephone: "+1-843-415-2437",
+          url: BASE,
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "302A Bald Ridge Rd",
+            addressLocality: "Cumming",
+            addressRegion: "GA",
+            postalCode: "30040",
+            addressCountry: "US",
+          },
+        },
+        areaServed: {
+          "@type": "City",
+          name: city.name,
+          containedInPlace: { "@type": "AdministrativeArea", name: city.county },
+        },
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: `Painting services in ${city.name}`,
+          itemListElement: services.map((s) => ({
+            "@type": "Offer",
+            itemOffered: { "@type": "Service", name: s.name },
+          })),
+        },
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${url}#faq`,
+        mainEntity: city.faqs.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: f.a },
+        })),
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${url}#breadcrumb`,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: BASE },
+          { "@type": "ListItem", position: 2, name: "Service Areas", item: `${BASE}/service-areas` },
+          { "@type": "ListItem", position: 3, name: `${city.name}, GA`, item: url },
+        ],
+      },
+    ],
   };
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
 
-      {/* Hero */}
-      <section className="bg-brand-black py-16 sm:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      {/* Hero with a city-specific image behind it */}
+      <section className="relative isolate overflow-hidden bg-brand-black">
+        <Image
+          src={city.image.src}
+          alt={city.image.alt}
+          fill
+          priority
+          sizes="100vw"
+          className="absolute inset-0 -z-10 h-full w-full object-cover opacity-40"
+        />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-brand-black via-brand-black/85 to-brand-black/40" />
+        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+          <nav aria-label="Breadcrumb" className="mb-6 text-sm text-gray-400">
+            <Link href="/" className="hover:text-brand-gold">Home</Link>
+            <span className="px-2">/</span>
+            <Link href="/service-areas" className="hover:text-brand-gold">Service Areas</Link>
+            <span className="px-2">/</span>
+            <span className="text-gray-300">{city.name}</span>
+          </nav>
           <div className="max-w-3xl">
-            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-              {t.city.heroTitle} {city}, GA
+            <Eyebrow>{city.county}</Eyebrow>
+            <h1 className="mt-5 text-4xl font-bold tracking-tight text-white text-balance sm:text-5xl lg:text-6xl">
+              Painter in {city.name}, GA
             </h1>
-            <p className="mt-6 text-lg text-gray-300">
-              {t.city.trustedBy} {city} {t.city.heroSubtitle}
-            </p>
+            <p className="mt-6 text-lg leading-relaxed text-gray-300">{city.answer}</p>
+            <p className="mt-4 text-sm text-gray-400">{city.driveTime}</p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link
                 href="/contact"
                 className="rounded-md bg-brand-gold px-8 py-3.5 text-center text-sm font-semibold text-brand-black transition hover:bg-brand-copper"
               >
-                {t.city.getQuote}
+                Get a Free Estimate
               </Link>
               <a
-                href="tel:8434152437"
+                href={PHONE_HREF}
                 className="rounded-md border border-gray-600 px-8 py-3.5 text-center text-sm font-semibold text-white transition hover:border-brand-gold hover:text-brand-gold"
               >
-                {t.city.call} (843) 415-2437
+                Call {PHONE_DISPLAY}
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Intro */}
+      {/* Local intro */}
       <section className="py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className={image ? "grid gap-12 lg:grid-cols-2" : "max-w-3xl"}>
-            <div>
-              <h2 className="text-3xl font-bold tracking-tight text-brand-black sm:text-4xl">
-                {t.city.localPainter} {city}, GA
-              </h2>
-              <p className="mt-6 text-brand-text leading-relaxed">{displayIntro}</p>
-              <div className="mt-8">
-                <Link
-                  href="/contact"
-                  className="rounded-md bg-brand-gold px-6 py-3 text-sm font-semibold text-brand-black transition hover:bg-brand-copper"
-                >
-                  {t.city.getEstimate}
-                </Link>
+          <div className="max-w-3xl">
+            <Eyebrow>Local knowledge</Eyebrow>
+            <h2 className="mt-5 text-3xl font-bold tracking-tight text-brand-black text-balance sm:text-4xl">
+              Painting {city.name} homes
+            </h2>
+            <p className="mt-6 text-lg leading-relaxed text-brand-text">{city.intro}</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Housing stock: the depth that makes this page worth citing */}
+      <section className="bg-brand-gray py-16 lg:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <Eyebrow>What we work on</Eyebrow>
+            <h2 className="mt-5 text-3xl font-bold tracking-tight text-brand-black text-balance sm:text-4xl">
+              The homes in {city.name}
+            </h2>
+          </div>
+          <div className="mt-12 grid gap-10 lg:grid-cols-3">
+            {city.housingStock.map((h) => (
+              <div key={h.heading} className="border-t-2 border-brand-black/10 pt-6">
+                <h3 className="text-xl font-semibold text-brand-black">{h.heading}</h3>
+                <p className="mt-3 leading-relaxed text-brand-text">{h.body}</p>
               </div>
-            </div>
-            {image && (
-              <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-              </div>
-            )}
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Local conditions */}
+      <section className="py-16 lg:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <Eyebrow>Local conditions</Eyebrow>
+            <h2 className="mt-5 text-3xl font-bold tracking-tight text-brand-black text-balance sm:text-4xl">
+              What the weather here does to paint
+            </h2>
+            <p className="mt-6 text-lg leading-relaxed text-brand-text">{city.conditions}</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing */}
+      <section className="bg-brand-black py-16 lg:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <Eyebrow>Straight pricing</Eyebrow>
+            <h2 className="mt-5 text-3xl font-bold tracking-tight text-white text-balance sm:text-4xl">
+              What painting costs in {city.name}
+            </h2>
+            <p className="mt-5 text-gray-400">
+              Real ranges, not a lead-capture teaser. Every estimate we give is written and itemized
+              so you can see what the prep is costing you separately from the paint.
+            </p>
+          </div>
+          <div className="mt-10 overflow-x-auto">
+            <table className="w-full min-w-[640px] border-collapse text-left">
+              <thead>
+                <tr className="border-b border-white/20">
+                  <th className="py-4 pr-6 text-[15px] font-semibold uppercase tracking-[0.14em] text-brand-gold">Service</th>
+                  <th className="py-4 pr-6 text-[15px] font-semibold uppercase tracking-[0.14em] text-brand-gold">Typical range</th>
+                  <th className="py-4 text-[15px] font-semibold uppercase tracking-[0.14em] text-brand-gold">What drives it</th>
+                </tr>
+              </thead>
+              <tbody>
+                {city.pricing.map((p) => (
+                  <tr key={p.service} className="border-b border-white/10">
+                    <td className="py-5 pr-6 font-semibold text-white">{p.service}</td>
+                    <td className="py-5 pr-6 font-semibold tabular-nums text-brand-gold">{p.range}</td>
+                    <td className="py-5 text-sm leading-relaxed text-gray-400">{p.note}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
 
       {/* Services */}
-      <section className="bg-brand-gray py-16 lg:py-24">
+      <section className="py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold tracking-tight text-brand-black sm:text-4xl">
-            {t.city.servicesTitle} {city}
-          </h2>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2">
-            {services.map((service) => (
+          <div className="max-w-3xl">
+            <Eyebrow>Services</Eyebrow>
+            <h2 className="mt-5 text-3xl font-bold tracking-tight text-brand-black text-balance sm:text-4xl">
+              What we do in {city.name}
+            </h2>
+          </div>
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {services.map((s) => (
               <Link
-                key={service.href}
-                href={service.href}
-                className="group rounded-lg bg-white p-6 shadow-sm transition hover:shadow-md"
+                key={s.href}
+                href={s.href}
+                className="group flex items-center justify-between border border-gray-200 bg-white p-6 transition hover:border-brand-gold"
               >
-                <h3 className="text-lg font-semibold text-brand-black group-hover:text-brand-gold">
-                  {service.name}
-                </h3>
-                <p className="mt-2 text-sm text-brand-text-light">{service.description}</p>
-                <span className="mt-3 inline-block text-sm font-medium text-brand-gold">
-                  {t.city.learnMore}
-                </span>
+                <span className="font-semibold text-brand-black group-hover:text-brand-gold">{s.name}</span>
+                <span aria-hidden="true" className="text-brand-gold">&rarr;</span>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Neighborhoods */}
-      <section className="py-16 lg:py-24">
+      {/* Neighborhoods, with a real reason each one is listed */}
+      <section className="bg-brand-gray py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold tracking-tight text-brand-black sm:text-4xl">
-            {t.city.neighborhoodsTitle} {city}
-          </h2>
-          <div className="mt-8 flex flex-wrap gap-3">
-            {neighborhoods.map((n) => (
-              <span
-                key={n}
-                className="rounded-full bg-brand-gray px-4 py-2 text-sm font-medium text-brand-black"
-              >
-                {n}
-              </span>
-            ))}
+          <div className="max-w-3xl">
+            <Eyebrow>Where we work</Eyebrow>
+            <h2 className="mt-5 text-3xl font-bold tracking-tight text-brand-black text-balance sm:text-4xl">
+              {city.name} neighborhoods
+            </h2>
           </div>
+          <dl className="mt-10 grid gap-x-12 gap-y-6 sm:grid-cols-2">
+            {city.neighborhoods.map((n) => (
+              <div key={n.name} className="border-b border-brand-black/10 pb-5">
+                <dt className="font-semibold text-brand-black">{n.name}</dt>
+                <dd className="mt-1 text-sm leading-relaxed text-brand-text-light">{n.note}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="bg-brand-gray py-16 lg:py-24">
+      <section className="py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold tracking-tight text-brand-black sm:text-4xl">
-            {t.city.faqTitle}
-          </h2>
-          <div className="mt-10 divide-y divide-gray-200">
-            {faqs.map((faq) => (
-              <div key={faq.q} className="py-6">
-                <h3 className="text-lg font-semibold text-brand-black">
-                  {locale === "es" && faq.qEs ? faq.qEs : faq.q}
-                </h3>
-                <p className="mt-2 text-brand-text-light">
-                  {locale === "es" && faq.aEs ? faq.aEs : faq.a}
-                </p>
+          <div className="max-w-3xl">
+            <Eyebrow>Questions</Eyebrow>
+            <h2 className="mt-5 text-3xl font-bold tracking-tight text-brand-black text-balance sm:text-4xl">
+              Painting in {city.name}, answered
+            </h2>
+          </div>
+          <div className="mt-10 max-w-3xl divide-y divide-gray-200">
+            {city.faqs.map((f) => (
+              <div key={f.q} className="py-7">
+                <h3 className="text-lg font-semibold text-brand-black">{f.q}</h3>
+                <p className="mt-3 leading-relaxed text-brand-text">{f.a}</p>
               </div>
             ))}
           </div>
@@ -173,13 +294,44 @@ export default function CityPageTemplate({ city, intro, introEs, neighborhoods, 
 
       <InlineCTA
         variant="dark"
-        headline={`Have more questions about your ${city} project?`}
-        subtext="We answer texts, calls, and emails within a few hours, 7 days a week."
+        headline={`Have more questions about your ${city.name} project?`}
+        subtext="We answer texts, calls, and emails within a few hours, seven days a week."
       />
 
+      {/* Nearby cities: internal linking across the local-SEO cluster */}
+      {nearby.length > 0 && (
+        <section className="py-16 lg:py-24">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl">
+              <Eyebrow>Nearby</Eyebrow>
+              <h2 className="mt-5 text-2xl font-bold tracking-tight text-brand-black sm:text-3xl">
+                We also work in
+              </h2>
+            </div>
+            <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3">
+              {nearby.map((n) => (
+                <Link
+                  key={n.slug}
+                  href={`/painting-${n.slug}-ga`}
+                  className="font-semibold text-brand-black underline decoration-brand-gold decoration-2 underline-offset-4 transition hover:text-brand-gold"
+                >
+                  {n.name}
+                </Link>
+              ))}
+              <Link
+                href="/service-areas"
+                className="font-semibold text-brand-text-light underline decoration-gray-300 decoration-2 underline-offset-4 transition hover:text-brand-gold"
+              >
+                All service areas
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
+
       <CTABanner
-        headline={`${t.city.readyTitle} ${city}${t.city.readyTitleSuffix}`}
-        subtext={t.city.readySubtext}
+        headline={`Ready to get your ${city.name} project started?`}
+        subtext="Free written estimate, itemized, with no pressure attached."
       />
       <div className="h-16 lg:hidden" />
     </>

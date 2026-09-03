@@ -142,7 +142,7 @@ export default function ServicesPage() {
               Painting &amp; Remodeling Services for North Atlanta
             </h1>
             <p className="mt-6 text-lg text-gray-300">
-              From a single accent wall to a full home transformation — owner-led,
+              From a single accent wall to a full home transformation, owner-led,
               craftsman-run, and backed by a 2-year workmanship warranty on every
               project.
             </p>
