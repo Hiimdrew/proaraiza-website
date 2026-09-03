@@ -23,7 +23,7 @@ Always `git fetch && git log --oneline origin/main` before trusting a working co
 
 ## IN FLIGHT
 
-_(none — Claude session fc9c4404 released 2026-07-30)_
+IN FLIGHT: Claude session fc9c4404 (2026-09-02) — local-SEO + AEO buildout. Owns `src/components/CityPageTemplate.tsx`, `src/app/painting-*`, `src/app/sitemap.ts`, `src/lib/cities.ts`. A Codex sub-session owns the anti-slop copy sweep on all OTHER app pages/components. Do not edit either lane concurrently.
 
 Claim by committing an `IN FLIGHT:` line before starting work. A foreign claim = STOP and tell Drew.
 
