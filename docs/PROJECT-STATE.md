@@ -23,7 +23,7 @@ Always `git fetch && git log --oneline origin/main` before trusting a working co
 
 ## IN FLIGHT
 
-IN FLIGHT: Claude session fc9c4404 (2026-09-02) — local-SEO + AEO buildout. Owns `src/components/CityPageTemplate.tsx`, `src/app/painting-*`, `src/app/sitemap.ts`, `src/lib/cities.ts`. A Codex sub-session owns the anti-slop copy sweep on all OTHER app pages/components. Do not edit either lane concurrently.
+_(none, Claude session fc9c4404 released 2026-09-02)_
 
 Claim by committing an `IN FLIGHT:` line before starting work. A foreign claim = STOP and tell Drew.
 
@@ -39,12 +39,16 @@ Claim by committing an `IN FLIGHT:` line before starting work. A foreign claim =
 - **GA4:** ✅ property `547898921` ("Pro Araiza Painting", account `402999529`, in **Joaquin's** Google account). Measurement ID `G-KG1YRW4803`, wired via `next/script` in `src/app/layout.tsx`. `generate_lead` fires from `ContactForm.tsx` after the server accepts. Realtime verified receiving.
 - **Vercel Web Analytics:** live alongside GA4.
 - **Brand logo:** ✅ **live on prod 2026-07-31** (`d7814e3`). Joaquin's PA lockup, black keyed to transparent (header/footer are `#0A0A0A`). Two crops in `public/images/`: `pa-logo-mark.png` (monogram → header) + `pa-logo-full.png` (full lockup → footer). Favicon + `src/app/icon.png` regenerated from the mark. Source: `LOGO JOAK PA.jpg` at vault root. Text wordmarks removed from `Header.tsx` / `Footer.tsx`.
+- **Local SEO / AEO:** ✅ **25 city pages live on prod 2026-09-02** (was 9). Data model in `src/lib/cities.ts` + `src/lib/city-data/*.ts`; routes are generated from that data, and so is `sitemap.ts`, so they cannot drift apart. Every page carries unique local depth: a direct-answer paragraph, housing stock, local weather conditions, a real pricing table, neighborhoods with context, and 6 FAQs. Schema per page is an `@graph` of Service (with areaServed + OfferCatalog) + FAQPage + BreadcrumbList. `/service-areas` hub added. 25 AI-generated hero images in `public/images/cities/` (architecturally accurate to each market, NOT fabricated landmarks).
+  - Savannah + Augusta are deliberately framed as travel/project work, not a fake local presence. Drew confirmed 2026-09-02 that Joaquin actually works those markets.
+- **Anti-slop:** ✅ pp-design-qa gate cleared 2026-09-02. Zero em dashes sitewide (83 removed), gold pill eyebrows replaced with ruled eyebrows at the 15px/600 floor, animated shimmer gradient text flattened, decorative pulse-glow and stray backdrop-blur removed, neighborhood pill badges replaced with a described list.
 - **Search Console:** domain verified (DNS TXT), but the property sits in a Google account **not** connected to Composio tooling — sitemap not yet submitted. Blocked on Drew.
 - **SEO:** sitemap.xml + robots.txt live. JSON-LD in layout.
 - **Security:** Next 16.2.9 (all HIGH advisories cleared), Dependabot on, branch protection on. Secrets in Vercel prod only (`RESEND_API_KEY`, `TURNSTILE_SECRET_KEY`, `NEXT_PUBLIC_TURNSTILE_SITE_KEY`), mirrored in gitignored `.env.local`.
 
 ## Open
 
+0. 🔴 **Dependabot: 22 vulnerabilities on `main` (13 high, 8 moderate, 1 low)** as of 2026-09-02. The STATE file previously recorded all HIGH advisories cleared at Next 16.2.9, so this has regressed since. Not introduced by the local-SEO work. Needs a patch session.
 1. **Search Console access** — find the Google account owning the property, add the Composio-connected account as a Full user, then submit the sitemap. (Drew)
 2. **Confirm Outlook delivery** with Joaquin. (Drew)
 3. Optional: link GA4 ↔ Search Console once #1 lands.
@@ -66,6 +70,8 @@ Claim by committing an `IN FLIGHT:` line before starting work. A foreign claim =
 `src/app/layout.tsx` (metadata + JSON-LD + Vercel Analytics + GA4) · `src/app/api/contact/route.ts` (lead router) · `src/components/ContactForm.tsx` · `src/app/sitemap.ts` · `src/app/robots.ts` · `src/components/CityPageTemplate.tsx` · `src/components/LazyVideo.tsx` (iOS multi-video fix) · `src/components/InlineCTA.tsx`
 
 ## History
+
+- **2026-09-02** — Local SEO + AEO rebuild shipped to prod. 9 city pages to 25 (added Savannah, Augusta, Suwanee, Johns Creek, Milton, Sugar Hill, Peachtree Corners, Sandy Springs, Dunwoody, Kennesaw, Canton, Flowery Branch, Braselton, Lawrenceville, Acworth, Dawsonville). Central city data model, generated routes + sitemap, `/service-areas` hub, per-page Service/FAQPage/BreadcrumbList schema, 25 hero images. Full anti-slop pass: 83 em dashes removed, pill eyebrows, shimmer gradient, and pulse-glow all gone. Also fixed a duplicated brand in every city `<title>` and a 15+ years vs 10 years contradiction in the OG alt text.
 
 - **2026-07-31** — Brand logo shipped to prod (`d7814e3`): PA lockup keyed transparent, monogram in header + full lockup in footer, favicon/app-icon regenerated. Assets 200 on prod, header render verified live.
 - **2026-07-30** — GA4 created + wired (`G-KG1YRW4803`), `generate_lead` conversion added, realtime verified. Contact form tested end-to-end for the first time and confirmed delivering. Governance kit adopted (this file).
