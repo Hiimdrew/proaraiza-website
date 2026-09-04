@@ -18,6 +18,12 @@ const GROUPS: { key: string; label: string; blurb: string }[] = [
       "Our home territory, all within about an hour of the Cumming shop. This is where we work every week.",
   },
   {
+    key: "intown",
+    label: "Intown and Inside the Perimeter",
+    blurb:
+      "Buckhead, Decatur, Brookhaven and the inner suburbs. Older housing, higher finish standards, and mostly sprayed rather than brushed work.",
+  },
+  {
     key: "west-metro",
     label: "West Metro Atlanta",
     blurb: "Cobb County and the western suburbs. Regular work, no change in pricing for the drive.",

@@ -34,12 +34,63 @@ export default function CityPageTemplate({ city }: { city: City }) {
     { name: "Commercial", href: "/commercial" },
   ];
 
-  // Answer-engine structured data. The graph ties the service, the area, the
-  // FAQ answers and the breadcrumb together so an engine can resolve
-  // "painter in {city}" to one business with one set of verifiable facts.
+  // Answer-engine + local-pack structured data.
+  //
+  // The graph resolves "painter in {city}" to one business with one set of
+  // verifiable facts, and pins it geographically. GeoCoordinates and a
+  // GeoCircle service area are what local ranking and AI geo attribution
+  // actually read; a Service with no geometry is invisible to both.
+  const BUSINESS = {
+    "@type": "HomeAndConstructionBusiness",
+    "@id": `${BASE}/#business`,
+    name: "Pro Araiza Remodeling & Painting",
+    alternateName: "Pro Araiza Painting",
+    founder: { "@type": "Person", name: "Joaquin Araiza" },
+    telephone: "+1-843-415-2437",
+    email: "Joaquin@proaraizapainting.com",
+    url: BASE,
+    image: `${BASE}/images/pa-logo-full.png`,
+    logo: `${BASE}/images/pa-logo-full.png`,
+    priceRange: "$$$",
+    foundingDate: "2016",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "302A Bald Ridge Rd",
+      addressLocality: "Cumming",
+      addressRegion: "GA",
+      postalCode: "30040",
+      addressCountry: "US",
+    },
+    geo: { "@type": "GeoCoordinates", latitude: 34.2073, longitude: -84.1402 },
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        opens: "07:00",
+        closes: "19:00",
+      },
+    ],
+  };
+
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${url}#webpage`,
+        url,
+        name: `Painter in ${city.name}, GA`,
+        description: city.answer,
+        isPartOf: { "@id": `${BASE}/#website` },
+        about: { "@id": `${url}#service` },
+        primaryImageOfPage: `${BASE}${city.image.src}`,
+        breadcrumb: { "@id": `${url}#breadcrumb` },
+        // Voice assistants read this block first.
+        speakable: {
+          "@type": "SpeakableSpecification",
+          cssSelector: ["h1", "[data-speakable]"],
+        },
+      },
       {
         "@type": "Service",
         "@id": `${url}#service`,
@@ -47,32 +98,54 @@ export default function CityPageTemplate({ city }: { city: City }) {
         serviceType: "Painting Contractor",
         description: city.answer,
         provider: {
-          "@type": "LocalBusiness",
-          name: "Pro Araiza Remodeling & Painting",
-          telephone: "+1-843-415-2437",
-          url: BASE,
-          address: {
-            "@type": "PostalAddress",
-            streetAddress: "302A Bald Ridge Rd",
-            addressLocality: "Cumming",
-            addressRegion: "GA",
-            postalCode: "30040",
-            addressCountry: "US",
+          ...BUSINESS,
+          // The radius the business will actually travel for this market.
+          serviceArea: {
+            "@type": "GeoCircle",
+            geoMidpoint: {
+              "@type": "GeoCoordinates",
+              latitude: city.coords.lat,
+              longitude: city.coords.lng,
+            },
+            geoRadius: city.region === "statewide" ? "80000" : "40000",
           },
         },
         areaServed: {
           "@type": "City",
           name: city.name,
-          containedInPlace: { "@type": "AdministrativeArea", name: city.county },
+          "@id": `${url}#place`,
+          geo: {
+            "@type": "GeoCoordinates",
+            latitude: city.coords.lat,
+            longitude: city.coords.lng,
+          },
+          containedInPlace: {
+            "@type": "AdministrativeArea",
+            name: city.county,
+            containedInPlace: { "@type": "State", name: "Georgia" },
+          },
         },
         hasOfferCatalog: {
           "@type": "OfferCatalog",
           name: `Painting services in ${city.name}`,
           itemListElement: services.map((s) => ({
             "@type": "Offer",
-            itemOffered: { "@type": "Service", name: s.name },
+            itemOffered: { "@type": "Service", name: s.name, serviceType: s.name },
+            areaServed: { "@type": "City", name: city.name },
           })),
         },
+        // Pricing surfaced as data, not just as a table an engine has to parse.
+        offers: city.pricing.map((p) => ({
+          "@type": "Offer",
+          name: p.service,
+          description: p.note,
+          priceSpecification: {
+            "@type": "PriceSpecification",
+            priceCurrency: "USD",
+            description: p.range,
+          },
+          areaServed: { "@type": "City", name: city.name },
+        })),
       },
       {
         "@type": "FAQPage",
@@ -126,7 +199,7 @@ export default function CityPageTemplate({ city }: { city: City }) {
             <h1 className="mt-5 text-4xl font-bold tracking-tight text-white text-balance sm:text-5xl lg:text-6xl">
               Painter in {city.name}, GA
             </h1>
-            <p className="mt-6 text-lg leading-relaxed text-gray-300">{city.answer}</p>
+            <p data-speakable className="mt-6 text-lg leading-relaxed text-gray-300">{city.answer}</p>
             <p className="mt-4 text-sm text-gray-400">{city.driveTime}</p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link

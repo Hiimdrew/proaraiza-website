@@ -1,3 +1,4 @@
+import { intown } from "./city-data/intown";
 import { outer } from "./city-data/outer";
 import { forsythNorthFulton } from "./city-data/forsyth-north-fulton";
 import { northFulton } from "./city-data/north-fulton";
@@ -30,8 +31,10 @@ export interface City {
   slug: string;
   name: string;
   county: string;
+  /** City-center coordinates. Drives GeoCoordinates + serviceArea schema. */
+  coords: { lat: number; lng: number };
   /** Metro grouping, drives the "nearby" internal-link block. */
-  region: "north-metro" | "west-metro" | "east-metro" | "statewide";
+  region: "north-metro" | "west-metro" | "east-metro" | "intown" | "statewide";
   /** Drive time from the Cumming shop, written for humans. */
   driveTime: string;
   /** Meta title, under 60 chars. */
@@ -66,6 +69,7 @@ export const CITIES: City[] = [
   ...intownWest,
   ...statewide,
   ...outer,
+  ...intown,
 ].sort((a, b) => a.name.localeCompare(b.name));
 
 export function getCity(slug: string): City | undefined {
