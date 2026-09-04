@@ -119,6 +119,7 @@ export const gwinnett: City[] = [
     slug: "buford",
     name: "Buford",
     county: "Gwinnett and Hall Counties",
+    counties: ["Gwinnett County", "Hall County"],
     coords: { lat: 34.1206, lng: -83.9946 },
     region: "north-metro",
     driveTime: "About 25 minutes from our Cumming shop",

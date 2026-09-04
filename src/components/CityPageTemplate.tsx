@@ -40,38 +40,6 @@ export default function CityPageTemplate({ city }: { city: City }) {
   // verifiable facts, and pins it geographically. GeoCoordinates and a
   // GeoCircle service area are what local ranking and AI geo attribution
   // actually read; a Service with no geometry is invisible to both.
-  const BUSINESS = {
-    "@type": "HomeAndConstructionBusiness",
-    "@id": `${BASE}/#business`,
-    name: "Pro Araiza Remodeling & Painting",
-    alternateName: "Pro Araiza Painting",
-    founder: { "@type": "Person", name: "Joaquin Araiza" },
-    telephone: "+1-843-415-2437",
-    email: "Joaquin@proaraizapainting.com",
-    url: BASE,
-    image: `${BASE}/images/pa-logo-full.png`,
-    logo: `${BASE}/images/pa-logo-full.png`,
-    priceRange: "$$$",
-    foundingDate: "2016",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "302A Bald Ridge Rd",
-      addressLocality: "Cumming",
-      addressRegion: "GA",
-      postalCode: "30040",
-      addressCountry: "US",
-    },
-    geo: { "@type": "GeoCoordinates", latitude: 34.2073, longitude: -84.1402 },
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-        opens: "07:00",
-        closes: "19:00",
-      },
-    ],
-  };
-
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
@@ -81,7 +49,6 @@ export default function CityPageTemplate({ city }: { city: City }) {
         url,
         name: `Painter in ${city.name}, GA`,
         description: city.answer,
-        isPartOf: { "@id": `${BASE}/#website` },
         about: { "@id": `${url}#service` },
         primaryImageOfPage: `${BASE}${city.image.src}`,
         breadcrumb: { "@id": `${url}#breadcrumb` },
@@ -97,21 +64,9 @@ export default function CityPageTemplate({ city }: { city: City }) {
         name: `House Painting in ${city.name}, GA`,
         serviceType: "Painting Contractor",
         description: city.answer,
-        provider: {
-          ...BUSINESS,
-          // The radius the business will actually travel for this market.
-          serviceArea: {
-            "@type": "GeoCircle",
-            geoMidpoint: {
-              "@type": "GeoCoordinates",
-              latitude: city.coords.lat,
-              longitude: city.coords.lng,
-            },
-            geoRadius: city.region === "statewide" ? "80000" : "40000",
-          },
-        },
+        provider: { "@id": `${BASE}/#business` },
         areaServed: {
-          "@type": "City",
+          "@type": city.schemaType ?? "City",
           name: city.name,
           "@id": `${url}#place`,
           geo: {
@@ -119,11 +74,25 @@ export default function CityPageTemplate({ city }: { city: City }) {
             latitude: city.coords.lat,
             longitude: city.coords.lng,
           },
-          containedInPlace: {
-            "@type": "AdministrativeArea",
-            name: city.county,
-            containedInPlace: { "@type": "State", name: "Georgia" },
-          },
+          // A district resolves through its parent city; a city resolves
+          // straight to its county. Several cities genuinely span counties,
+          // so each real county is its own node rather than one invented
+          // area named for all of them.
+          containedInPlace: city.parentCity
+            ? {
+                "@type": "City",
+                name: city.parentCity,
+                containedInPlace: {
+                  "@type": "AdministrativeArea",
+                  name: city.county,
+                  containedInPlace: { "@type": "State", name: "Georgia" },
+                },
+              }
+            : (city.counties ?? [city.county]).map((c) => ({
+                "@type": "AdministrativeArea",
+                name: c,
+                containedInPlace: { "@type": "State", name: "Georgia" },
+              })),
         },
         hasOfferCatalog: {
           "@type": "OfferCatalog",

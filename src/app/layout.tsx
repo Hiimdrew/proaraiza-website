@@ -45,7 +45,8 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": "HousePainter",
+  "@id": "https://www.proaraizapainting.com/#business",
   name: "Pro Araiza Remodeling & Painting",
   legalName: "PROARAIZA LLC REMODELING & PAINTING",
   founder: {

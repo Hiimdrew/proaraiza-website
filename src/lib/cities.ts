@@ -31,6 +31,12 @@ export interface City {
   slug: string;
   name: string;
   county: string;
+  /** schema.org type. A district of a larger city is a Place, not a City. */
+  schemaType?: "City" | "Place";
+  /** For a district: the city that contains it. */
+  parentCity?: string;
+  /** Real county names. `county` is the display string and may name several. */
+  counties?: string[];
   /** City-center coordinates. Drives GeoCoordinates + serviceArea schema. */
   coords: { lat: number; lng: number };
   /** Metro grouping, drives the "nearby" internal-link block. */
