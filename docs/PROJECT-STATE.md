@@ -45,14 +45,14 @@ Claim by committing an `IN FLIGHT:` line before starting work. A foreign claim =
   - **30 AI-generated hero images** in `public/images/cities/` (26 MB total, 1920px JPEG). Architecturally accurate to each market's real housing stock, NOT fabricated landmarks.
   - Savannah + Augusta are deliberately framed as travel/project work, not a fake local presence. Drew confirmed 2026-09-02 that Joaquin actually works those markets.
 - **Anti-slop:** ✅ pp-design-qa gate cleared 2026-09-02. Zero em dashes sitewide (83 removed), gold pill eyebrows replaced with ruled eyebrows at the 15px/600 floor, animated shimmer gradient text flattened, decorative pulse-glow and stray backdrop-blur removed, neighborhood pill badges replaced with a described list.
-- **Search Console:** domain verified (DNS TXT), but the property sits in a Google account **not** connected to Composio tooling — sitemap not yet submitted. Blocked on Drew.
+- **Search Console:** ✅ **LIVE and submitted 2026-09-14.** Domain property `proaraizapainting.com` is owned by **joaquin@proaraizapainting.com** (Google Workspace on the client's own domain, the ideal owner). `https://www.proaraizapainting.com/sitemap.xml` submitted: Success, **48 URLs discovered**. Indexing requested on the first 10 priority URLs (`/service-areas` + Buckhead, Alpharetta, Milton, Johns Creek, Roswell, Suwanee, Decatur, Cumming, Sandy Springs); Alpharetta, Roswell, Cumming were already indexed. **dmays83@gmail.com added as Full user** (not Owner). Done by Codex via computer use in Drew's Chrome. Gotcha: the Sitemaps box needs the FULL URL, not `sitemap.xml`.
 - **SEO:** sitemap.xml + robots.txt live. JSON-LD in layout.
 - **Security:** Next 16.2.9 (all HIGH advisories cleared), Dependabot on, branch protection on. Secrets in Vercel prod only (`RESEND_API_KEY`, `TURNSTILE_SECRET_KEY`, `NEXT_PUBLIC_TURNSTILE_SITE_KEY`), mirrored in gitignored `.env.local`.
 
 ## Open
 
 0. 🔴 **Dependabot: 22 vulnerabilities on `main` (13 high, 8 moderate, 1 low)** as of 2026-09-02. The STATE file previously recorded all HIGH advisories cleared at Next 16.2.9, so this has regressed since. Not introduced by the local-SEO work. Needs a patch session.
-1. **Search Console access** — RESOLVED FACTS 2026-09-14: the verified `sc-domain:proaraizapainting.com` property is owned by **proaraizallc93@gmail.com** (Joaquin's Gmail; NOT signed into Drew's Chrome). Its DNS token `google-site-verification=pgQBYXlyzVZZvUk_DQIUcAxWX4n_pvaNuDzJfon9SCc` is live at the apex (107d old). **DNS zone is Vercel DNS under `hiimdrews-projects`** (`vercel dns ls proaraizapainting.com`), so a second verification TXT can be added from the CLI. Plan: co-verify the domain under dmays83@gmail.com with token `google-site-verification=1R14urXtPPw1dcX5jr2UcVBZuS-fsqLzj82N5klPoGQ` (obtained from GSC 9/14), then submit `sitemap.xml` + request indexing on the top URLs. Sitemap still NOT submitted as of 9/14. Composio GSC (`google_search_console_outher-dogy`) still sees only the GEC properties.
+1. **Indexing drip (Drew/Codex, ~5 min/day for 2 more days):** request indexing on the next 10 cities each day via URL Inspection. Day 2: Brookhaven, Smyrna, Tucker, Dunwoody, Peachtree Corners, Duluth, Marietta, Woodstock, Canton, Kennesaw. Day 3: Buford, Sugar Hill, Lawrenceville, Dacula, Gainesville, Flowery Branch, Braselton, Dawsonville, Acworth, Savannah, Augusta. Then optional: Bing Webmaster Tools import from GSC (needs a Microsoft login; ChatGPT search runs on Bing).
 2. **Confirm Outlook delivery** with Joaquin. (Drew)
 3. Optional: link GA4 ↔ Search Console once #1 lands.
 4. Later: Resend paid ($20/mo) → verify `presencepulse.digital`, flip `LEAD_FROM` to `leads@presencepulse.digital` (one line, becomes the universal PP sender).
@@ -73,6 +73,8 @@ Claim by committing an `IN FLIGHT:` line before starting work. A foreign claim =
 `src/app/layout.tsx` (metadata + JSON-LD + Vercel Analytics + GA4) · `src/app/api/contact/route.ts` (lead router) · `src/components/ContactForm.tsx` · `src/app/sitemap.ts` · `src/app/robots.ts` · `src/components/CityPageTemplate.tsx` · `src/components/LazyVideo.tsx` (iOS multi-video fix) · `src/components/InlineCTA.tsx`
 
 ## History
+
+- **2026-09-14** — Search Console DONE. Owner confirmed as joaquin@proaraizapainting.com; sitemap submitted (48 URLs); indexing requested on 10 priority URLs; dmays83 added as Full user. Executed by Codex computer-use in Drew's Chrome. Also 9/11: lead-stall investigation concluded the form works (794-char Turnstile token in real Chrome); the stall was traffic, root cause = this unsubmitted sitemap.
 
 - **2026-09-04** — Round 2 shipped to prod. 25 to 30 city pages (+Buckhead, Decatur, Brookhaven, Smyrna, Tucker). Full GEO schema layer added (coordinates, GeoCircle service areas, containedInPlace chains, HomeAndConstructionBusiness). AEO: speakable spec + Offer/PriceSpecification pricing. 5 new hero images. FAQ question phrasing diversified per a Codex read-only audit.
 
