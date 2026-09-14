@@ -52,7 +52,7 @@ Claim by committing an `IN FLIGHT:` line before starting work. A foreign claim =
 ## Open
 
 0. 🔴 **Dependabot: 22 vulnerabilities on `main` (13 high, 8 moderate, 1 low)** as of 2026-09-02. The STATE file previously recorded all HIGH advisories cleared at Next 16.2.9, so this has regressed since. Not introduced by the local-SEO work. Needs a patch session.
-1. **Search Console access** — find the Google account owning the property, add the Composio-connected account as a Full user, then submit the sitemap. (Drew)
+1. **Search Console access** — RESOLVED FACTS 2026-09-14: the verified `sc-domain:proaraizapainting.com` property is owned by **proaraizallc93@gmail.com** (Joaquin's Gmail; NOT signed into Drew's Chrome). Its DNS token `google-site-verification=pgQBYXlyzVZZvUk_DQIUcAxWX4n_pvaNuDzJfon9SCc` is live at the apex (107d old). **DNS zone is Vercel DNS under `hiimdrews-projects`** (`vercel dns ls proaraizapainting.com`), so a second verification TXT can be added from the CLI. Plan: co-verify the domain under dmays83@gmail.com with token `google-site-verification=1R14urXtPPw1dcX5jr2UcVBZuS-fsqLzj82N5klPoGQ` (obtained from GSC 9/14), then submit `sitemap.xml` + request indexing on the top URLs. Sitemap still NOT submitted as of 9/14. Composio GSC (`google_search_console_outher-dogy`) still sees only the GEC properties.
 2. **Confirm Outlook delivery** with Joaquin. (Drew)
 3. Optional: link GA4 ↔ Search Console once #1 lands.
 4. Later: Resend paid ($20/mo) → verify `presencepulse.digital`, flip `LEAD_FROM` to `leads@presencepulse.digital` (one line, becomes the universal PP sender).
